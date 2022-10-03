@@ -8,44 +8,25 @@ menu:
     weight: 3
 ---
 
-## Contra vagos
+## About Myself
 
-Lorem _markdownum notam si_ lintea meque certa [en meumque
-illis](#cohibentem-iuvenaliter), diu fatigant, nec praedae concustodita arcet.
-[Paviunt castris](#nemorisque-urimur-violentus) cur errat ventis causa! Silvas
-sine satis vocat praedam moverat, precor, non sola bovis neque mihi. Primum
-utilis nympham, et certus amplexas Deiphobum palmis credas ambo, nec.
+My name is Axel. I live in this beautiful country we call France. 
+I have a Master Degree in Applied Economics with major in Econometrics and Statistics. 
+I am in general interested in solving problems. What I like the most is the heuristic in problem solving. 
 
-> Excidit gente, si orat suo quaeque dura Calydon nata? Pars auro post stetit
-> adfusique imis amplexus. Agmina per fabricator
-> mittere Erymanthon habetque tot.
+Whether it be Economics problems such as Game Theory or coding challenges I love it when I am pushed to my limits. 
 
-**Cineres Nile ipsa** origine discurrunt adest Unde, et quem clausus, imo,
-virens quoque tales, potuit. Ingentes insilit corpore nutricis praebebat roganti
-licuit. Denique a vestros adulantum in bella lina parte et arte generi di igitur
-quis, digitis pedes. Cum resonant tamen, namque in anxia. Non nostri trahens
-ancora.
+I currently work as a Sofware Engineer in a consulting company based in Nantes, West France. 
+I intervene as a C#/.NET developer for large companies where I help building robust, resilient and reliable software for various applications. 
+I am at ease using WPF with the MVVM pattern for building desktop softwares (I keep on eye on the new .NET MAUI) ans with ASP.NET MVC and Blazor. 
 
-## Ducem oculos pallor tale quoque
+My journey in coding started in 2017 when I first encountered the R programming language for statistics and econometric courses. I remeber using the FactoMiner and Rcmdr packages
+for PCA, MCA and Hierarchical clustering. It was a whole new world that reveals itself to me. I decided this same year to learn programming. 
 
-Pectora de Hebe veste mansit nemorisque oppugnare deos, interea eo calescit
-**invita insidiae** Amymonen, semper respiciens vocato, illis! Coruscis ut somno
-hiatu Tantalides frenis nexilibus hamata limbo mentis, pacis iudicium
-auxilioque. Genus dolori, me ira hae inpediunt tellus, nascendi Boreas!
-Tangentiaque tecto et secuta recursus quo matrisque, moenia sedulitas Cyllenius
-in duxere plenaque: **hos**.
+A year later,  out of curiosity I deciced to buy José Portilla course on Data Science and Machine learning using Python on Udemy. I discovered Python syntax and fell in love with it. 
 
-1. Olim pulvere
-2. Verus ego ovantem mihi
-3. Tenuit erat semina superari
-4. Dabis natis hoc genu in quidem dumque
+For many years I've used extensively both languages both for academic purposes and personal projects. Rmarkdown and Jupyter Notebook where my friends and I loved it when my teachers asked me how I could make these beautiful visualizations in my projects. 
 
-Per tenuata [potiora](#inmeritae-discordemque-iterum) dedit caelo admota
-iniustus decipere do loca multa non parat. Ingratos his ut inde credite sensit
-sorte. Spectat cognitius tamen spem facit, et facto tecumque quae incumbere
-relictis fronde rebus! Bene haeret circumdata tunc cremantur propter iuvencos
-deus inserit sit tua. Pompa non precor procumbit inania lacrimas sacra credetis:
-Oceano, femina?
+As time evolved my interested for building production grade softwares show up. With both R and Python people can build useful applications but I found them not so popular in large companies. Python has a better appreciation for Machine Learning and scripting than R but in general they lack some features that languages such as Java, C#, C++ or Go have that is performance and scalability. 
 
-Bacchantum neque. Humum ut violasse quam inmotos! Danae aera vertitur potiere
-scopuloque pecus, ut animam aversata Iovis, petentes aura, _montibus_.
+That's why I decided to open up to C#. 
