@@ -1,5 +1,5 @@
 ---
-title: You don't start out writing good stuff
+title: The tech enthusiast
 description: The hallway smelt of boiled cabbage and old rag mats.
 ---
 

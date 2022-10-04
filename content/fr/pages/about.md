@@ -8,8 +8,8 @@ menu:
     weight: 3
 ---
 
-Je m'appelle Axelle. Je vis dans ce beau pays qu'on appelle la France.
-J'ai une maîtrise en économie appliquée avec une majeure en économétrie et statistique.
+Je m'appelle Axel. Je vis dans ce beau pays qu'on appelle la France.
+Je suis diplômé d'un Master en économie appliquée avec une dominante en économétrie et statistique.
 Je suis en général intéressé par la résolution de problèmes. Ce que j'aime le plus, c'est l'heuristique dans la résolution de problèmes.
 
 Qu'il s'agisse de problèmes économiques tels que la théorie des jeux ou de défis de codage, j'adore quand je suis poussé à mes limites.
@@ -29,6 +29,6 @@ Au fil du temps, mon intérêt pour la construction de logiciels de qualité de 
 
 C'est pourquoi j'ai décidé de m'ouvrir au C#.
 
-Idéalement, j'aimerais travailler sur un projet qui implique à la fois le développement de données et de logiciels. Un scénario que j'apprécierai vraiment consiste à créer une application Web solide avec ASP.NET et Blazor qui exploite les capacités d'apprentissage automatique de Python.
+Idéalement, j'aimerais travailler sur un projet qui implique à la fois le développement de données et de logiciels. Un scénario que j'apprécierais vraiment consiste à créer une application Web solide avec ASP.NET et Blazor qui exploite les capacités d'apprentissage automatique de Python.
 
 Vous pouvez me trouver sur LinkedIn et Twitter.
