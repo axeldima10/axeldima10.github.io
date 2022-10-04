@@ -30,3 +30,7 @@ For many years I've used extensively both languages both for academic purposes a
 As time evolved my interested for building production grade softwares show up. With both R and Python people can build useful applications but I found them not so popular in large companies. Python has a better appreciation for Machine Learning and scripting than R but in general they lack some features that languages such as Java, C#, C++ or Go have that is performance and scalability. 
 
 That's why I decided to open up to C#. 
+
+Ideally I'd like to work on a project which involves both Data and sofware development. A scenario I'll really appreciate is to build a solid web app with ASP.NET and Blazor that leverages Python's machine learning capabilities. 
+
+You can find me on LinkedIn and Twitter. 
