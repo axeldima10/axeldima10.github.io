@@ -1,6 +1,8 @@
 ---
 title: The tech enthusiast
-description: The hallway smelt of boiled cabbage and old rag mats.
+description: 
 ---
 
-The hallway smelt of boiled cabbage and old rag mats. At one end of it a coloured poster, too large for indoor display, had been tacked to the wall. It depicted simply an enormous face, more than a metre wide: the face of a man of about forty-five, with a heavy black moustache and ruggedly handsome features. Winston made for the stairs. It was no use trying the lift. 
+Bienvenue sur le blog des passionnés de technologie où j'écris sur le codage, la science des données, l'apprentissage automatique en utilisant les meilleures technologies.
+Je suis Axel, ingénieur logiciel, passionné de .NET, R et Python.
+Vous pouvez apprendre à me connaître en lisant la section "À propos". Prenons contact sur LinkedIn ou Twitter !
