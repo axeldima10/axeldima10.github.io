@@ -4,7 +4,7 @@ image: images/writer.jpg
 url: "about"
 menu:
   main:
-    name: "About"
+    name: "Me connaître"
     weight: 3
 ---
 
