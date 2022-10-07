@@ -43,6 +43,8 @@ pygmentsUseClasses = true
     url = '/'
     weight = 1
 
+  
+
 [languages]
   [languages.en]
   contentDir = 'content/en'

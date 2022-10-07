@@ -1,10 +1,10 @@
 ---
-title: 'About'
+title: 'A propos de moi'
 image: images/writer.jpg
 url: "about"
 menu:
   main:
-    name: "Me connaître"
+    name: "A propos"
     weight: 3
 ---
 
