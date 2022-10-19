@@ -8,6 +8,8 @@ pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
 
+disqusShortname = "axel-cleris-gailloty"
+
 [module]
   [module.hugoVersion]
     extended = true
