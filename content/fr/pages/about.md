@@ -4,7 +4,7 @@ image: images/writer.jpg
 url: "about"
 menu:
   main:
-    name: "A propos"
+    name: "About"
     weight: 3
 ---
 
