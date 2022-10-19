@@ -1,3 +1,3 @@
 [submodule "themes/hugo-winston-theme"]
 	path = themes/hugo-winston-theme
-	url = https://github.com/agailloty/hugo-winston-theme/tree/disqus
+	url = https://github.com/agailloty/hugo-winston-theme/
