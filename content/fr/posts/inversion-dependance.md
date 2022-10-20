@@ -4,19 +4,26 @@ date: 2022-10-14
 description: "L'inversion de dépendance est un des principes de SOLID et stipule qu'une classe ne doit pas dépendre de l'implémentation de la classe dépendante mais plutôt sur une abastraction de celle-ci."
 ---
 
+# Introduction & définition
+
+L’inversion de dépendance est un des principes de l'approche SOLID. Elle traite de la question du couplage entre les différentes classes ou modules de votre application.
+L'inversion de dépendance fait intervenir les notions de classe supérieure et de classes inférieures. La classe supérieure dépend d'une ou de plusieurs classes inférieures. La devise principale de l’inversion de dépendance est **Toute classe supérieure devrait toujours dépendre de l’abstraction de la classe inférieure plutôt que de l'implémentation de cette dernière**. 
+
+Enoncer ce principe via sa devise ne suffit pas saisir entièrement ce que l'inversion de dépendance représente en réalité. Nous allons donc écrire du code C# pour voir l'application de ce principe en action. 
+
 # Exemple
 
-## Implémentation sans inversion de dépendance
-
 Pour mieux saisir le principe de l'inversion de dépendance, il me semble pertinent d'étudier un exemple pratique. 
-Supposons que nous ayons une classe nommée `TradeProcessor` qui lit des données à partir d'une source, retraite les données brute et les stocke quelque part.  
+Supposons que nous ayons une classe principale (supérieure) nommée `TradeProcessor`. Cette classe se charge de lire des données à partir d'une source, puis elle retraite les données brutes et les stocke quelque part.  
 
-Cette classe dépend de trois autres classes notamment les classes:
+Elle dépend des trois classes suivantes :
 -  `DataProvider` qui fournit à la classe un ensemble de méthodes pour récupérer les données brutes. 
 - `DataParser` qui est une classe qui contient des méthodes pour traiter les données et les rendre prêtes à stocker. 
 - `DataStorage` qui est une classe qui se charge de stocker les données dans une base de données et d'écrire des logs. 
 
-Nous présentons un à un le code de chacune de ces classes. 
+## Implémentation sans inversion de dépendance
+
+Nous présentons un à un le code de chacune de ces classes.
 
 ### La classe `TradeProcessor`
 

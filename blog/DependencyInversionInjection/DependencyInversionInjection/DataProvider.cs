@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DependencyInversionInjection
 {
-    public class DataProvider
+    public class DataProvider : IDataProvider
     {
         private readonly StreamReader _reader;
 
@@ -19,8 +19,8 @@ namespace DependencyInversionInjection
 
         public List<string> GetAll()
         {
-             var rawData = new List<string>();
-            while(_reader.ReadLine() != null)
+            var rawData = new List<string>();
+            while (_reader.ReadLine() != null)
             {
                 rawData.Add(_reader.ReadLine());
             }

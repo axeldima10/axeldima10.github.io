@@ -24,7 +24,7 @@ namespace DependencyInversionInjection
         {
             var lines = _data.GetAll();
             var trades = _parser.Parse(lines);
-            //_storage.Persist(trades);
+            _storage.Persist(trades);
         }
     }
 }
