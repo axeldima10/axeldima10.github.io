@@ -27,4 +27,24 @@ namespace DependencyInversionInjection
             _storage.Persist(trades);
         }
     }
+
+    public class TradeDataProcessorDI
+    {
+        private readonly IDataProvider _data;
+        private readonly IDataParser _parser;
+        private readonly IDataStorage _storage;
+        public TradeDataProcessorDI(IDataProvider data, IDataParser parser, IDataStorage storage)
+        {
+            _data = data;
+            _parser = parser;
+            _storage = storage;
+        }
+
+        public void ProcessTrade()
+        {
+            var lines = _data.GetAll();
+            var trades = _parser.Parse(lines);
+            _storage.Persist(trades);
+        }
+    }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DependencyInversionInjection
 {
-    public class DataStorage
+    public class DataStorage : IDataStorage
     {
         public void Persist(List<UserData> users)
         {

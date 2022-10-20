@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DependencyInversionInjection
 {
-    public class DataParser
+    public class DataParser : IDataParser
     {
 
         public List<UserData> Parse(List<string> data)
@@ -14,7 +14,7 @@ namespace DependencyInversionInjection
             string[] currentData;
             UserData userData;
             List<UserData> result = new List<UserData>();
-            foreach(string line in data)
+            foreach (string line in data)
             {
                 currentData = line.Split('/');
                 userData = new UserData();

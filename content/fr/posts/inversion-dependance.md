@@ -114,9 +114,14 @@ public class DataParser
 ### La classe `DataStorage`
 
 ```csharp
-
-
-
+    public class DataStorage
+    {
+        public void Persist(List<UserData> users)
+        {
+            var json = JsonSerializer.Serialize(users);
+            File.WriteAllText("cleaned.json", json);
+        }
+    }
 ```
 
 ## Implémentation avec inversion de dépendance
@@ -124,7 +129,121 @@ public class DataParser
 ## Les interfaces en C#
 
 ## Créer des interfaces pour chacune des classes
+### Extraire l'interface d'une classe
 
 Il est possible d'extraire une interface à partir d'une classe existante grâce à Visual Studio.
+Pour extraire une interface à partir d'une classe. Placez votre souris sur le nom de classe puis faites un clic droit. Un memu contextuel s'affiche. 
 
-### Extraire l'interface d'une classe
+![](/blog/dependency-injection-inversion/extract-interface-1.png)
+
+Ensuite sélectionner la première option *Actions rapides et factorisations...*.
+![](/blog/dependency-injection-inversion/extract-interface-2.png)
+
+Vous avez ensuite le choix des propriétés et méthodes publiques à inclure dans l'interface. Une fois que cela est fait cliquez sur OK pour que Visual Studio vous crée un fichier contenant l'interface. Vous pouvez choisir d'inclure le code de l'interface directement dans le fichier. 
+
+![](/blog/dependency-injection-inversion/extract-interface-3.png)
+
+## Implémentation avec l'inversion de la dépendance
+
+L'idée ici c'est de faire en sorte que la classe `TradeProcessor` ne dépende pas des classes inférieures mais qu'elle dépende plutôt des abastractions de ces classes. 
+L'élement que nous utilisons pour l'abastraction est justement une interface. 
+
+Nous avons extrait les interfaces des classes inférieures, voilà donc comment nous implémentons la classe `TradeProcessor`, nous donnons le nom de `TradeProcessorDI`.
+
+```csharp
+    public class TradeProcessorDI
+    {
+        private readonly IDataProvider _data;
+        private readonly IDataParser _parser;
+        private readonly IDataStorage _storage;
+        public TradeProcessorDI(IDataProvider data, IDataParser parser, IDataStorage storage)
+        {
+            _data = data;
+            _parser = parser;
+            _storage = storage;
+        }
+
+        public void ProcessTrade()
+        {
+            var lines = _data.GetAll();
+            var trades = _parser.Parse(lines);
+            _storage.Persist(trades);
+        }
+    }
+```
+
+Vous remarquerez que peu de choses diffèrent entre les classes `TradeDataProcessor` et `TradeDataProcessorDI`. En fait nous avons seulement remplacé les noms des classes inférieures par les noms de leurs interfaces. 
+La classe fonctionne exactement pareil. 
+
+La méthode `Main` de notre programme fonctionne exactement pareil avec les deux classes `TradeDataProcessor` et `TradeDataProcessorDI`
+
+```csharp
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            var data = new DataProvider("data/rawData.txt");
+            var parser = new DataParser();
+            var storage = new DataStorage();
+
+            var processor = new TradeDataProcessorDI(data, parser, storage);
+            processor.ProcessTrade();
+        }
+    }
+```
+
+```csharp
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            var data = new DataProvider("data/rawData.txt");
+            var parser = new DataParser();
+            var storage = new DataStorage();
+
+            var processor = new TradeDataProcessor(data, parser, storage);
+            processor.ProcessTrade();
+        }
+    }
+```
+
+# Quel intérêt ?
+
+Vous pouvez vous dire mais à quoi ça sert de faire toute cette bidouille pour arriver à la même solution qu'avec la première classe. 
+En fait nous venons d'inverser les dépendances de la classe TradeDataProcessor. Cela signifie que la classe TradeDataProcessorDI peut prendre en argument dans son constructeur non seulement les classe `DataProvider`, `DataParser` et `DataStorage` mais aussi n'importe quelle classe qui implémente les interfaces `IDataProvider`, `IDataParser` et `IDataStorage`. 
+
+```csharp
+    public class XMLDataStorage : IDataStorage
+    {
+        public void Persist(List<UserData> users)
+        {
+            using (XmlWriter writer = XmlWriter.Create("users.xml"))
+            {
+                writer.WriteStartElement("UserData");
+                foreach(UserData user in users)
+                {
+                    writer.WriteElementString("Id", user.ID.ToString());
+                    writer.WriteElementString("Name", user.Name.ToString());
+                    writer.WriteElementString("Phone", user.PhoneNumber.ToString());
+                }
+                writer.WriteEndElement();
+                writer.Flush();
+            }
+        }
+    }
+```
+
+```csharp
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            var data = new DataProvider("data/rawData.txt");
+            var parser = new DataParser();
+            var storage = new XMLDataStorage(); // Nouvelle classe de stockage des données
+
+            var processor = new TradeDataProcessorDI(data, parser, storage);
+            processor.ProcessTrade();
+        }
+    }
+```
