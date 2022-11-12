@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: Tech Enthusiast # Website name
-baseURL: 'https://agailloty.github.io/fr' # Website URL
+baseURL: 'https://agailloty.github.io/' # Website URL
 
 ############################
 ## LANGUAGE
