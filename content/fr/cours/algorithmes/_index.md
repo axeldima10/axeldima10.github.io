@@ -2,7 +2,7 @@
 title: 📊 Algorithmique et programmation
 linkTitle: Algo
 summary: Cours d'algorithmique et de programmation avec Python
-date: '2022-11-12'
+date: '2022-12-12'
 type: book
 tags:
   - current
@@ -20,3 +20,4 @@ The demand for skilled data science practitioners is rapidly growing. Lorem ipsu
 ## Meet your instructor
 
 {{< mention "admin" >}}
+
