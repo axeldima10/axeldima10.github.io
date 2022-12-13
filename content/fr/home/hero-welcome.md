@@ -9,8 +9,11 @@ design:
   #css_class: fullscreen
 ---
 
-Welcome to the tech enthusiast blog where I write about coding, data science, machine learning using best of technologies. I’m Axel, a software engineer, .NET, R and Python enthusiast. You can get to know me by reading the About section. Let’s get in touch on LinkedIn or Twitter !
-
+<br>
+Bienvenue sur le blog des passionnés de technologie où j'écris sur le codage, la science des données, l'apprentissage automatique en utilisant les meilleures technologies. Je suis Axel, ingénieur logiciel, passionné de .NET, R et Python. Vous pouvez apprendre à me connaître en lisant la section À propos. Prenons contact sur LinkedIn ou Twitter !
+<br>
+<br>
+<br>
 
 
 <a class="twitter-timeline" data-height="500" href="https://twitter.com/cleris_mr?ref_src=twsrc%5Etfw">Tweets by cleris_mr</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
