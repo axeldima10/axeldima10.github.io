@@ -57,6 +57,10 @@ jobs:
         with:
           path: ./public
 
+      - name: Copy Google Console Creds to main folder
+        run: |
+          cp googleff726ff33b0c27dd.html ./public/googleff726ff33b0c27dd.html
+
   # Deployment job
   deploy:
     environment:
