@@ -25,12 +25,16 @@ content:
   # To filter by a specific tag, set `tag` to an existing tag name.
   # To remove the toolbar, delete the entire `filter_button` block.
   filter_button:
-    - name: All
+    - name: Tout
       tag: '*'
-    - name: Deep Learning
-      tag: Deep Learning
-    - name: Other
-      tag: Demo
+    - name: .NET
+      tag: dotnet
+    - name: Python
+      tag: python
+    - name: Web
+      tag: web
+    - name: AI
+      tag: ai
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
@@ -44,5 +48,5 @@ design:
   view: showcase
 
   # For Showcase view, flip alternate rows?
-  flip_alt_rows: false
+  flip_alt_rows: true
 ---

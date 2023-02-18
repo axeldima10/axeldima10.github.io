@@ -9,7 +9,7 @@ appearance:
   theme_day: minimal
   theme_night: minimal
   font: minimal
-  font_size: XL
+  font_size: L
 
 # SEO
 
@@ -32,20 +32,20 @@ marketing:
 header:
   navbar:
     enable: true
-    align: l
-    show_logo: true
-    show_language: true
+    align: r
+    show_logo: false
+    show_language: false
     show_day_night: true
-    show_search: true
+    show_search: false
     highlight_active_link: true
 
 # Site footer
 
 footer:
   copyright:
-    notice: '© {year} Tech Enthusiast.'
+    notice: '© {year} Axel-Cleris Gailloty.'
     license:
-      enable: true
+      enable: false
       allow_derivatives: false
       share_alike: true
       allow_commercial: false
@@ -77,7 +77,7 @@ features:
   comment:
     provider: ''
     disqus:
-      shortname: ''
+      shortname: 'axel-cleris-gailloty-1'
       show_count: true
     commento:
       url: ''

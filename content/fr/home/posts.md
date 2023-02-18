@@ -10,7 +10,7 @@ headless: true
 weight: 60
 
 title: Blog
-subtitle: 'Articles récents'
+subtitle: 'Articles'
 
 content:
   # Filter on criteria

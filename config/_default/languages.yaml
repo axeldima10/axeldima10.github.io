@@ -8,13 +8,12 @@ fr:
   contentDir: content/fr
   menu:
     main:
+    - name: Home
+      url: '/'
+      weight: 5
     - name: A propos
       url: '/me'
       weight: 6
-      
-    - name: Cours
-      url: '/cours'
-      weight: 7
 en:
   languageCode: en-us
   # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.

@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Axel-Cleris G.
+title: Axel-Cleris Gailloty
 
 # Full name (for SEO)
 first_name: Axel-Cleris
