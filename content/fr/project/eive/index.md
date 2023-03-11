@@ -1,8 +1,9 @@
 ---
 title: EIVE - Economic Impacts of Volcanic Eruptions
-summary: An example of using the in-built project page.
+summary: EIVE est une plateforme en ligne pour aider les chercheurs en économie et en volcanologie à contribuer à une base de données en ligne sur les impacts économiques des éruptions volcaniques. L'application est entièrement écrite en R avec Shiny.
 tags:
   - web
+  - R
 date: '2020-04-27T00:00:00Z'
 
 # Optional external URL for project (replaces project detail page).
