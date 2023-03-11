@@ -3,7 +3,7 @@ widget: hero
 active: true
 headless: true
 weight: 10
-title: Tech Enthusiast
+title: Hey !
 design:
 # advanced:
   #css_class: fullscreen
