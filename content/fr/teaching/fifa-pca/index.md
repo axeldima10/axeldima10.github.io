@@ -1,3 +1,11 @@
+---
+title: Analyse en composantes principales
+summary: Dans ce travail, je me propose de vous exposer une méthode d’analyse de données très populaire appelée l’analyse en composantes principales. Après une brève description de cette méthode pour que vous sachiez à quoi elle sert je ferai une application sur un jeu de données qui contient des précieuses données sur les caractéristiques physiques des joueurs de football. J’utiliserai le langage R avec les packages FactoMineR et factoextra pour réaliser l’étude.
+tags:
+  - analytics
+  - R
+---
+
 # Introduction
 
 Dans ce travail, je me propose de vous exposer une méthode d’analyse de
