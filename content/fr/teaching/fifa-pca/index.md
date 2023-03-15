@@ -4,6 +4,12 @@ summary: Dans ce travail, je me propose de vous exposer une méthode d’analyse
 tags:
   - analytics
   - R
+
+# Date published
+date: '2023-03-15:00:00Z'
+
+# Date updated
+lastmod: '2023-03-15:00:00Z'
 ---
 
 # Introduction
