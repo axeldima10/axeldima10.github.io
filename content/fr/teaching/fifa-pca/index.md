@@ -93,17 +93,28 @@ avoir un aperçu des données.
 
     fifa22[1:10, 1:10]
 
-              short_name player_positions overall potential value_eur wage_eur age        dob height_cm weight_kg
-    1           L, Messi       RW, ST, CF      93        93  78000000   320000  34 1987-06-24       170        72
-    2     R, Lewandowski               ST      92        92 119500000   270000  32 1988-08-21       185        81
-    3  Cristiano Ronaldo           ST, LW      91        91  45000000   270000  36 1985-02-05       187        83
-    4          Neymar Jr          LW, CAM      91        91 129000000   270000  29 1992-02-05       175        68
-    5       K, De Bruyne          CM, CAM      91        91 125500000   350000  30 1991-06-28       181        70
-    6           J, Oblak               GK      91        93 112000000   130000  28 1993-01-07       188        87
-    7          K, Mbappé           ST, LW      91        95 194000000   230000  22 1998-12-20       182        73
-    8           M, Neuer               GK      90        90  13500000    86000  35 1986-03-27       193        93
-    9      M, ter Stegen               GK      90        92  99000000   250000  29 1992-04-30       187        85
-    10           H, Kane               ST      90        90 129500000   240000  27 1993-07-28       188        89
+              short_name player_positions overall potential value_eur wage_eur age        dob height_cm
+    1           L, Messi       RW, ST, CF      93        93  78000000   320000  34 1987-06-24       170
+    2     R, Lewandowski               ST      92        92 119500000   270000  32 1988-08-21       185
+    3  Cristiano Ronaldo           ST, LW      91        91  45000000   270000  36 1985-02-05       187
+    4          Neymar Jr          LW, CAM      91        91 129000000   270000  29 1992-02-05       175
+    5       K, De Bruyne          CM, CAM      91        91 125500000   350000  30 1991-06-28       181
+    6           J, Oblak               GK      91        93 112000000   130000  28 1993-01-07       188
+    7          K, Mbappé           ST, LW      91        95 194000000   230000  22 1998-12-20       182
+    8           M, Neuer               GK      90        90  13500000    86000  35 1986-03-27       193
+    9      M, ter Stegen               GK      90        92  99000000   250000  29 1992-04-30       187
+    10           H, Kane               ST      90        90 129500000   240000  27 1993-07-28       188
+       weight_kg
+    1         72
+    2         81
+    3         83
+    4         68
+    5         70
+    6         87
+    7         73
+    8         93
+    9         85
+    10        89
 
 # Réaliser une ACP sur le jeu de données
 
@@ -159,28 +170,28 @@ seront numérotés de 1 à 100 comme dans le tableau suivant.
 
     fifa_100[1:10, 1:10]
 
-       height_cm weight_kg skill_dribbling skill_ball_control movement_acceleration movement_agility power_shot_power power_jumping power_stamina
-    1        170        72              96                 96                    91               91               86            68            72
-    2        185        81              85                 88                    77               77               90            85            76
-    3        187        83              88                 88                    85               86               94            95            77
-    4        175        68              95                 95                    93               96               80            64            81
-    5        181        70              88                 91                    76               79               91            63            89
-    6        188        87              12                 30                    43               67               59            78            41
-    7        182        73              93                 91                    97               92               86            78            88
-    8        193        93              30                 46                    54               51               68            77            43
-    9        187        85              21                 30                    38               39               66            79            35
-    10       188        89              83                 85                    65               71               91            79            83
-       power_strength
-    1              69
-    2              86
-    3              77
-    4              53
-    5              74
-    6              78
-    7              77
-    8              80
-    9              78
-    10             85
+       height_cm weight_kg skill_dribbling skill_ball_control movement_acceleration movement_agility
+    1        170        72              96                 96                    91               91
+    2        185        81              85                 88                    77               77
+    3        187        83              88                 88                    85               86
+    4        175        68              95                 95                    93               96
+    5        181        70              88                 91                    76               79
+    6        188        87              12                 30                    43               67
+    7        182        73              93                 91                    97               92
+    8        193        93              30                 46                    54               51
+    9        187        85              21                 30                    38               39
+    10       188        89              83                 85                    65               71
+       power_shot_power power_jumping power_stamina power_strength
+    1                86            68            72             69
+    2                90            85            76             86
+    3                94            95            77             77
+    4                80            64            81             53
+    5                91            63            89             74
+    6                59            78            41             78
+    7                86            78            88             77
+    8                68            77            43             80
+    9                66            79            35             78
+    10               91            79            83             85
 
     fifa_100 <- data.frame(fifa_100)
     rownames(fifa_100) <- head(fifa22$short_name, 100)
@@ -189,28 +200,28 @@ Maintenant chaque ligne correspond au nom d’un joueur.
 
     fifa_100[1:10, 1:10]
 
-                      height_cm weight_kg skill_dribbling skill_ball_control movement_acceleration movement_agility power_shot_power
-    L, Messi                170        72              96                 96                    91               91               86
-    R, Lewandowski          185        81              85                 88                    77               77               90
-    Cristiano Ronaldo       187        83              88                 88                    85               86               94
-    Neymar Jr               175        68              95                 95                    93               96               80
-    K, De Bruyne            181        70              88                 91                    76               79               91
-    J, Oblak                188        87              12                 30                    43               67               59
-    K, Mbappé               182        73              93                 91                    97               92               86
-    M, Neuer                193        93              30                 46                    54               51               68
-    M, ter Stegen           187        85              21                 30                    38               39               66
-    H, Kane                 188        89              83                 85                    65               71               91
-                      power_jumping power_stamina power_strength
-    L, Messi                     68            72             69
-    R, Lewandowski               85            76             86
-    Cristiano Ronaldo            95            77             77
-    Neymar Jr                    64            81             53
-    K, De Bruyne                 63            89             74
-    J, Oblak                     78            41             78
-    K, Mbappé                    78            88             77
-    M, Neuer                     77            43             80
-    M, ter Stegen                79            35             78
-    H, Kane                      79            83             85
+                      height_cm weight_kg skill_dribbling skill_ball_control movement_acceleration
+    L, Messi                170        72              96                 96                    91
+    R, Lewandowski          185        81              85                 88                    77
+    Cristiano Ronaldo       187        83              88                 88                    85
+    Neymar Jr               175        68              95                 95                    93
+    K, De Bruyne            181        70              88                 91                    76
+    J, Oblak                188        87              12                 30                    43
+    K, Mbappé               182        73              93                 91                    97
+    M, Neuer                193        93              30                 46                    54
+    M, ter Stegen           187        85              21                 30                    38
+    H, Kane                 188        89              83                 85                    65
+                      movement_agility power_shot_power power_jumping power_stamina power_strength
+    L, Messi                        91               86            68            72             69
+    R, Lewandowski                  77               90            85            76             86
+    Cristiano Ronaldo               86               94            95            77             77
+    Neymar Jr                       96               80            64            81             53
+    K, De Bruyne                    79               91            63            89             74
+    J, Oblak                        67               59            78            41             78
+    K, Mbappé                       92               86            78            88             77
+    M, Neuer                        51               68            77            43             80
+    M, ter Stegen                   39               66            79            35             78
+    H, Kane                         71               91            79            83             85
 
 ## Réalisation de l’ACP avec FactoMineR
 
@@ -261,8 +272,9 @@ qualitatives illustratives.
     premiere_acp <- PCA(X = fifa_100, scale.unit = TRUE, quanti.sup = idx_var_quanti_illustratives, 
                         quali.sup = idx_var_quali_illustratives, graph = FALSE)
 
-    Warning in PCA(X = fifa_100, scale.unit = TRUE, quanti.sup = idx_var_quanti_illustratives, : Missing values are imputed by the mean of the
-    variable: you should use the imputePCA function of the missMDA package
+    Warning in PCA(X = fifa_100, scale.unit = TRUE, quanti.sup = idx_var_quanti_illustratives, :
+    Missing values are imputed by the mean of the variable: you should use the imputePCA function of
+    the missMDA package
 
 ## Combien de composantes retenir ?
 
@@ -278,27 +290,42 @@ sur l’objet *premiere\_acp* pour afficher certaines informations.
 
 
     Eigenvalues
-                           Dim.1   Dim.2   Dim.3   Dim.4   Dim.5   Dim.6   Dim.7   Dim.8   Dim.9  Dim.10  Dim.11  Dim.12  Dim.13  Dim.14  Dim.15
-    Variance               9.547   4.167   1.873   1.047   0.767   0.369   0.285   0.217   0.167   0.156   0.130   0.080   0.055   0.046   0.028
-    % of var.             50.248  21.933   9.860   5.509   4.037   1.941   1.501   1.141   0.882   0.819   0.685   0.423   0.288   0.240   0.149
-    Cumulative % of var.  50.248  72.181  82.041  87.549  91.586  93.527  95.029  96.170  97.051  97.871  98.555  98.978  99.266  99.506  99.655
-                          Dim.16  Dim.17  Dim.18  Dim.19
-    Variance               0.022   0.019   0.016   0.009
-    % of var.              0.115   0.100   0.085   0.045
-    Cumulative % of var.  99.770  99.870  99.955 100.000
+                           Dim.1   Dim.2   Dim.3   Dim.4   Dim.5   Dim.6   Dim.7   Dim.8   Dim.9
+    Variance               9.547   4.167   1.873   1.047   0.767   0.369   0.285   0.217   0.167
+    % of var.             50.248  21.933   9.860   5.509   4.037   1.941   1.501   1.141   0.882
+    Cumulative % of var.  50.248  72.181  82.041  87.549  91.586  93.527  95.029  96.170  97.051
+                          Dim.10  Dim.11  Dim.12  Dim.13  Dim.14  Dim.15  Dim.16  Dim.17  Dim.18
+    Variance               0.156   0.130   0.080   0.055   0.046   0.028   0.022   0.019   0.016
+    % of var.              0.819   0.685   0.423   0.288   0.240   0.149   0.115   0.100   0.085
+    Cumulative % of var.  97.871  98.555  98.978  99.266  99.506  99.655  99.770  99.870  99.955
+                          Dim.19
+    Variance               0.009
+    % of var.              0.045
+    Cumulative % of var. 100.000
 
     Individuals (the 10 first)
-                                    Dist    Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr   cos2  
-    L, Messi                    |  3.928 |  0.864  0.078  0.048 | -3.479  2.905  0.784 |  0.758  0.306  0.037 |
-    R, Lewandowski              |  2.857 |  0.591  0.037  0.043 | -0.374  0.033  0.017 |  2.560  3.497  0.803 |
-    Cristiano Ronaldo           |  3.758 |  0.342  0.012  0.008 | -1.332  0.426  0.126 |  3.179  5.395  0.716 |
-    Neymar Jr                   |  3.933 |  1.321  0.183  0.113 | -3.624  3.151  0.849 | -0.177  0.017  0.002 |
-    K, De Bruyne                |  2.615 |  2.024  0.429  0.599 | -0.590  0.084  0.051 |  0.008  0.000  0.000 |
-    J, Oblak                    |  7.200 | -6.992  5.121  0.943 |  0.261  0.016  0.001 | -0.362  0.070  0.003 |
-    K, Mbappé                   |  3.419 |  1.301  0.177  0.145 | -2.278  1.245  0.444 |  1.812  1.753  0.281 |
-    M, Neuer                    |  7.505 | -6.894  4.978  0.844 |  0.310  0.023  0.002 |  0.693  0.257  0.009 |
-    M, ter Stegen               |  8.221 | -7.291  5.568  0.786 |  0.954  0.218  0.013 | -0.068  0.002  0.000 |
-    H, Kane                     |  2.843 |  0.364  0.014  0.016 |  0.467  0.052  0.027 |  2.501  3.339  0.774 |
+                                    Dist    Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr
+    L, Messi                    |  3.928 |  0.864  0.078  0.048 | -3.479  2.905  0.784 |  0.758  0.306
+    R, Lewandowski              |  2.857 |  0.591  0.037  0.043 | -0.374  0.033  0.017 |  2.560  3.497
+    Cristiano Ronaldo           |  3.758 |  0.342  0.012  0.008 | -1.332  0.426  0.126 |  3.179  5.395
+    Neymar Jr                   |  3.933 |  1.321  0.183  0.113 | -3.624  3.151  0.849 | -0.177  0.017
+    K, De Bruyne                |  2.615 |  2.024  0.429  0.599 | -0.590  0.084  0.051 |  0.008  0.000
+    J, Oblak                    |  7.200 | -6.992  5.121  0.943 |  0.261  0.016  0.001 | -0.362  0.070
+    K, Mbappé                   |  3.419 |  1.301  0.177  0.145 | -2.278  1.245  0.444 |  1.812  1.753
+    M, Neuer                    |  7.505 | -6.894  4.978  0.844 |  0.310  0.023  0.002 |  0.693  0.257
+    M, ter Stegen               |  8.221 | -7.291  5.568  0.786 |  0.954  0.218  0.013 | -0.068  0.002
+    H, Kane                     |  2.843 |  0.364  0.014  0.016 |  0.467  0.052  0.027 |  2.501  3.339
+                                  cos2  
+    L, Messi                     0.037 |
+    R, Lewandowski               0.803 |
+    Cristiano Ronaldo            0.716 |
+    Neymar Jr                    0.002 |
+    K, De Bruyne                 0.000 |
+    J, Oblak                     0.003 |
+    K, Mbappé                    0.281 |
+    M, Neuer                     0.009 |
+    M, ter Stegen                0.000 |
+    H, Kane                      0.774 |
 
     Variables (the 10 first)
                                    Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr   cos2  
@@ -326,15 +353,24 @@ sur l’objet *premiere\_acp* pour afficher certaines informations.
     physic                      |  0.021  0.000 |  0.783  0.613 |  0.368  0.135 |
 
     Supplementary categories
-                                    Dist    Dim.1   cos2 v.test    Dim.2   cos2 v.test    Dim.3   cos2 v.test  
-    Lean (170-)                 |  4.652 |  2.626  0.319  0.850 | -1.551  0.111 -0.760 | -3.182  0.468 -2.325 |
-    Lean (170-185)              |  1.998 |  1.800  0.811  1.932 | -0.285  0.020 -0.462 | -0.714  0.128 -1.729 |
-    Lean (185+)                 |  2.085 | -1.133  0.295 -0.745 |  1.406  0.455  1.399 | -0.381  0.033 -0.565 |
-    Normal (170-)               |  4.242 |  1.185  0.078  0.383 | -3.678  0.752 -1.802 | -1.022  0.058 -0.747 |
-    Normal (170-185)            |  1.039 |  0.458  0.194  0.464 |  0.123  0.014  0.189 | -0.690  0.441 -1.577 |
-    Normal (185+)               |  2.883 | -1.948  0.457 -1.850 |  2.016  0.489  2.898 | -0.166  0.003 -0.356 |
-    Stocky (185+)               |  7.414 | -7.103  0.918 -2.299 | -0.482  0.004 -0.236 | -0.869  0.014 -0.635 |
-    Unique                      |  0.437 |  0.020  0.002  0.088 | -0.217  0.246 -1.472 |  0.322  0.544  3.264 |
+                                    Dist    Dim.1   cos2 v.test    Dim.2   cos2 v.test    Dim.3   cos2
+    Lean (170-)                 |  4.652 |  2.626  0.319  0.850 | -1.551  0.111 -0.760 | -3.182  0.468
+    Lean (170-185)              |  1.998 |  1.800  0.811  1.932 | -0.285  0.020 -0.462 | -0.714  0.128
+    Lean (185+)                 |  2.085 | -1.133  0.295 -0.745 |  1.406  0.455  1.399 | -0.381  0.033
+    Normal (170-)               |  4.242 |  1.185  0.078  0.383 | -3.678  0.752 -1.802 | -1.022  0.058
+    Normal (170-185)            |  1.039 |  0.458  0.194  0.464 |  0.123  0.014  0.189 | -0.690  0.441
+    Normal (185+)               |  2.883 | -1.948  0.457 -1.850 |  2.016  0.489  2.898 | -0.166  0.003
+    Stocky (185+)               |  7.414 | -7.103  0.918 -2.299 | -0.482  0.004 -0.236 | -0.869  0.014
+    Unique                      |  0.437 |  0.020  0.002  0.088 | -0.217  0.246 -1.472 |  0.322  0.544
+                                v.test  
+    Lean (170-)                 -2.325 |
+    Lean (170-185)              -1.729 |
+    Lean (185+)                 -0.565 |
+    Normal (170-)               -0.747 |
+    Normal (170-185)            -1.577 |
+    Normal (185+)               -0.356 |
+    Stocky (185+)               -0.635 |
+    Unique                       3.264 |
 
 L’objet eig nous renvoie un tbaleau qui nous permet de déterminer
 combien de composantes retenir dans l’ACP.
@@ -547,13 +583,13 @@ axe.
 
     plot.PCA(premiere_acp, axes = c(1, 2), choix = "var")
 
-![](FIFA2_files/figure-markdown_strict/unnamed-chunk-23-1.png)
+![](FIFA2_files/figure-markdown_strict/unnamed-chunk-137-1.png)
 
 ## Graphique des individus
 
     plot.PCA(premiere_acp, axes = c(1, 2), choix = "ind")
 
-![](FIFA2_files/figure-markdown_strict/unnamed-chunk-24-1.png)
+![](FIFA2_files/figure-markdown_strict/unnamed-chunk-138-1.png)
 
 ## Personnalisation des graphiques avec `factoextra`
 
@@ -561,17 +597,17 @@ axe.
 
     fviz_pca_var(premiere_acp, col.var="contrib", axes = c(1,2), gradient.cols = c("blue", "yellow", "red"), title = "Cercle des corrélations avec contribution de chaque variable")
 
-![](FIFA2_files/figure-markdown_strict/unnamed-chunk-25-1.png)
+![](FIFA2_files/figure-markdown_strict/unnamed-chunk-139-1.png)
 
 ### Représenter le % de contribution de chaque variable sur les axes 1 et 2
 
     fviz_contrib(premiere_acp, choice = "var", axes = 1)
 
-![](FIFA2_files/figure-markdown_strict/unnamed-chunk-26-1.png)
+![](FIFA2_files/figure-markdown_strict/unnamed-chunk-140-1.png)
 
     fviz_contrib(premiere_acp, choice = "var", axes = 2)
 
-![](FIFA2_files/figure-markdown_strict/unnamed-chunk-27-1.png)
+![](FIFA2_files/figure-markdown_strict/unnamed-chunk-141-1.png)
 
 # Classification ascendate hiérarchique (CAH)
 
@@ -667,19 +703,19 @@ cluster. C’est eux qui caractérisent le mieux le cluster étudié.
     Cluster: 1
     G, Donnarumma   W, Szczęsny      J, Oblak     Y, Sommer       Alisson 
         0.7437392     0.7764569     0.8745005     1.1648592     1.7734468 
-    ---------------------------------------------------------------------------------------------------------- 
+    --------------------------------------------------------------------------- 
     Cluster: 2
     R, Lewandowski        H, Kane    C, Immobile      L, Suárez     K, Benzema 
          0.7057555      0.7562182      0.8249288      0.9437102      0.9907515 
-    ---------------------------------------------------------------------------------------------------------- 
+    --------------------------------------------------------------------------- 
     Cluster: 3
       S, Gnabry    M, Salah   P, Dybala   Oyarzabal Á, Di María 
       0.5125072   0.5198456   0.5664524   0.6265379   0.7321610 
-    ---------------------------------------------------------------------------------------------------------- 
+    --------------------------------------------------------------------------- 
     Cluster: 4
       Rúben Dias   L, Bonucci Thiago Silva   A, Laporte   S, de Vrij 
        0.6053112    0.7313895    0.7423503    0.8298838    0.8657299 
-    ---------------------------------------------------------------------------------------------------------- 
+    --------------------------------------------------------------------------- 
     Cluster: 5
     T, Alexander-Arnold        João Cancelo        A, Robertson          F, de Jong     Bruno Fernandes 
               0.4016233           0.5214053           0.8291440           0.9979184           1.0795893 
@@ -695,19 +731,19 @@ plusieurs clusters.
     Cluster: 1
       H, Lloris     Ederson  P, Gulácsi T, Courtois K, Casteels 
        9.402346    9.207166    8.921628    8.706093    8.660642 
-    ---------------------------------------------------------------------------------------------------------- 
+    --------------------------------------------------------------------------- 
     Cluster: 2
        Z, Ibrahimović         R, Lukaku        E, Haaland           H, Kane Cristiano Ronaldo 
              4.787525          4.584261          4.415862          3.669592          3.280196 
-    ---------------------------------------------------------------------------------------------------------- 
+    --------------------------------------------------------------------------- 
     Cluster: 3
     L, Insigne   A, Gómez  E, Hazard  Neymar Jr  R, Mahrez 
       5.575780   3.977211   3.952106   3.924649   3.877662 
-    ---------------------------------------------------------------------------------------------------------- 
+    --------------------------------------------------------------------------- 
     Cluster: 4
       M, Hummels G, Chiellini K, Koulibaly  V, van Dijk        Piqué 
         4.506813     4.489410     4.364257     4.351577     4.284480 
-    ---------------------------------------------------------------------------------------------------------- 
+    --------------------------------------------------------------------------- 
     Cluster: 5
         T, Kroos  M, Verratti       Parejo  Jesús Navas A, Robertson 
         4.947775     4.490787     3.922122     3.917639     3.701767 
@@ -718,17 +754,17 @@ plusieurs clusters.
 
     Warning: ggrepel: 19 unlabeled data points (too many overlaps). Consider increasing max.overlaps
 
-![](FIFA2_files/figure-markdown_strict/unnamed-chunk-32-1.png)
+![](FIFA2_files/figure-markdown_strict/unnamed-chunk-146-1.png)
 
     fviz_dend(classif)
 
-![](FIFA2_files/figure-markdown_strict/unnamed-chunk-33-1.png)
+![](FIFA2_files/figure-markdown_strict/unnamed-chunk-147-1.png)
 
     classif2 <- HCPC(premiere_acp, graph = FALSE)
 
     fviz_cluster(classif2)
 
-![](FIFA2_files/figure-markdown_strict/unnamed-chunk-35-1.png)
+![](FIFA2_files/figure-markdown_strict/unnamed-chunk-149-1.png)
 
 # Annexes
 
@@ -743,27 +779,42 @@ plusieurs clusters.
 
 
     Eigenvalues
-                           Dim.1   Dim.2   Dim.3   Dim.4   Dim.5   Dim.6   Dim.7   Dim.8   Dim.9  Dim.10  Dim.11  Dim.12  Dim.13  Dim.14  Dim.15
-    Variance               9.547   4.167   1.873   1.047   0.767   0.369   0.285   0.217   0.167   0.156   0.130   0.080   0.055   0.046   0.028
-    % of var.             50.248  21.933   9.860   5.509   4.037   1.941   1.501   1.141   0.882   0.819   0.685   0.423   0.288   0.240   0.149
-    Cumulative % of var.  50.248  72.181  82.041  87.549  91.586  93.527  95.029  96.170  97.051  97.871  98.555  98.978  99.266  99.506  99.655
-                          Dim.16  Dim.17  Dim.18  Dim.19
-    Variance               0.022   0.019   0.016   0.009
-    % of var.              0.115   0.100   0.085   0.045
-    Cumulative % of var.  99.770  99.870  99.955 100.000
+                           Dim.1   Dim.2   Dim.3   Dim.4   Dim.5   Dim.6   Dim.7   Dim.8   Dim.9
+    Variance               9.547   4.167   1.873   1.047   0.767   0.369   0.285   0.217   0.167
+    % of var.             50.248  21.933   9.860   5.509   4.037   1.941   1.501   1.141   0.882
+    Cumulative % of var.  50.248  72.181  82.041  87.549  91.586  93.527  95.029  96.170  97.051
+                          Dim.10  Dim.11  Dim.12  Dim.13  Dim.14  Dim.15  Dim.16  Dim.17  Dim.18
+    Variance               0.156   0.130   0.080   0.055   0.046   0.028   0.022   0.019   0.016
+    % of var.              0.819   0.685   0.423   0.288   0.240   0.149   0.115   0.100   0.085
+    Cumulative % of var.  97.871  98.555  98.978  99.266  99.506  99.655  99.770  99.870  99.955
+                          Dim.19
+    Variance               0.009
+    % of var.              0.045
+    Cumulative % of var. 100.000
 
     Individuals (the 10 first)
-                                    Dist    Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr   cos2  
-    L, Messi                    |  3.928 |  0.864  0.078  0.048 | -3.479  2.905  0.784 |  0.758  0.306  0.037 |
-    R, Lewandowski              |  2.857 |  0.591  0.037  0.043 | -0.374  0.033  0.017 |  2.560  3.497  0.803 |
-    Cristiano Ronaldo           |  3.758 |  0.342  0.012  0.008 | -1.332  0.426  0.126 |  3.179  5.395  0.716 |
-    Neymar Jr                   |  3.933 |  1.321  0.183  0.113 | -3.624  3.151  0.849 | -0.177  0.017  0.002 |
-    K, De Bruyne                |  2.615 |  2.024  0.429  0.599 | -0.590  0.084  0.051 |  0.008  0.000  0.000 |
-    J, Oblak                    |  7.200 | -6.992  5.121  0.943 |  0.261  0.016  0.001 | -0.362  0.070  0.003 |
-    K, Mbappé                   |  3.419 |  1.301  0.177  0.145 | -2.278  1.245  0.444 |  1.812  1.753  0.281 |
-    M, Neuer                    |  7.505 | -6.894  4.978  0.844 |  0.310  0.023  0.002 |  0.693  0.257  0.009 |
-    M, ter Stegen               |  8.221 | -7.291  5.568  0.786 |  0.954  0.218  0.013 | -0.068  0.002  0.000 |
-    H, Kane                     |  2.843 |  0.364  0.014  0.016 |  0.467  0.052  0.027 |  2.501  3.339  0.774 |
+                                    Dist    Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr
+    L, Messi                    |  3.928 |  0.864  0.078  0.048 | -3.479  2.905  0.784 |  0.758  0.306
+    R, Lewandowski              |  2.857 |  0.591  0.037  0.043 | -0.374  0.033  0.017 |  2.560  3.497
+    Cristiano Ronaldo           |  3.758 |  0.342  0.012  0.008 | -1.332  0.426  0.126 |  3.179  5.395
+    Neymar Jr                   |  3.933 |  1.321  0.183  0.113 | -3.624  3.151  0.849 | -0.177  0.017
+    K, De Bruyne                |  2.615 |  2.024  0.429  0.599 | -0.590  0.084  0.051 |  0.008  0.000
+    J, Oblak                    |  7.200 | -6.992  5.121  0.943 |  0.261  0.016  0.001 | -0.362  0.070
+    K, Mbappé                   |  3.419 |  1.301  0.177  0.145 | -2.278  1.245  0.444 |  1.812  1.753
+    M, Neuer                    |  7.505 | -6.894  4.978  0.844 |  0.310  0.023  0.002 |  0.693  0.257
+    M, ter Stegen               |  8.221 | -7.291  5.568  0.786 |  0.954  0.218  0.013 | -0.068  0.002
+    H, Kane                     |  2.843 |  0.364  0.014  0.016 |  0.467  0.052  0.027 |  2.501  3.339
+                                  cos2  
+    L, Messi                     0.037 |
+    R, Lewandowski               0.803 |
+    Cristiano Ronaldo            0.716 |
+    Neymar Jr                    0.002 |
+    K, De Bruyne                 0.000 |
+    J, Oblak                     0.003 |
+    K, Mbappé                    0.281 |
+    M, Neuer                     0.009 |
+    M, ter Stegen                0.000 |
+    H, Kane                      0.774 |
 
     Variables (the 10 first)
                                    Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr   cos2  
@@ -791,15 +842,24 @@ plusieurs clusters.
     physic                      |  0.021  0.000 |  0.783  0.613 |  0.368  0.135 |
 
     Supplementary categories
-                                    Dist    Dim.1   cos2 v.test    Dim.2   cos2 v.test    Dim.3   cos2 v.test  
-    Lean (170-)                 |  4.652 |  2.626  0.319  0.850 | -1.551  0.111 -0.760 | -3.182  0.468 -2.325 |
-    Lean (170-185)              |  1.998 |  1.800  0.811  1.932 | -0.285  0.020 -0.462 | -0.714  0.128 -1.729 |
-    Lean (185+)                 |  2.085 | -1.133  0.295 -0.745 |  1.406  0.455  1.399 | -0.381  0.033 -0.565 |
-    Normal (170-)               |  4.242 |  1.185  0.078  0.383 | -3.678  0.752 -1.802 | -1.022  0.058 -0.747 |
-    Normal (170-185)            |  1.039 |  0.458  0.194  0.464 |  0.123  0.014  0.189 | -0.690  0.441 -1.577 |
-    Normal (185+)               |  2.883 | -1.948  0.457 -1.850 |  2.016  0.489  2.898 | -0.166  0.003 -0.356 |
-    Stocky (185+)               |  7.414 | -7.103  0.918 -2.299 | -0.482  0.004 -0.236 | -0.869  0.014 -0.635 |
-    Unique                      |  0.437 |  0.020  0.002  0.088 | -0.217  0.246 -1.472 |  0.322  0.544  3.264 |
+                                    Dist    Dim.1   cos2 v.test    Dim.2   cos2 v.test    Dim.3   cos2
+    Lean (170-)                 |  4.652 |  2.626  0.319  0.850 | -1.551  0.111 -0.760 | -3.182  0.468
+    Lean (170-185)              |  1.998 |  1.800  0.811  1.932 | -0.285  0.020 -0.462 | -0.714  0.128
+    Lean (185+)                 |  2.085 | -1.133  0.295 -0.745 |  1.406  0.455  1.399 | -0.381  0.033
+    Normal (170-)               |  4.242 |  1.185  0.078  0.383 | -3.678  0.752 -1.802 | -1.022  0.058
+    Normal (170-185)            |  1.039 |  0.458  0.194  0.464 |  0.123  0.014  0.189 | -0.690  0.441
+    Normal (185+)               |  2.883 | -1.948  0.457 -1.850 |  2.016  0.489  2.898 | -0.166  0.003
+    Stocky (185+)               |  7.414 | -7.103  0.918 -2.299 | -0.482  0.004 -0.236 | -0.869  0.014
+    Unique                      |  0.437 |  0.020  0.002  0.088 | -0.217  0.246 -1.472 |  0.322  0.544
+                                v.test  
+    Lean (170-)                 -2.325 |
+    Lean (170-185)              -1.729 |
+    Lean (185+)                 -0.565 |
+    Normal (170-)               -0.747 |
+    Normal (170-185)            -1.577 |
+    Normal (185+)               -0.356 |
+    Stocky (185+)               -0.635 |
+    Unique                       3.264 |
 
 # Bibliographie
 

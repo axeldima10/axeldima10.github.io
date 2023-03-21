@@ -1,0 +1,391 @@
+---
+title: "Analyse en composantes principales sur le jeu de données FIFA 2022"
+author: "Axel-Cleris Gailloty"
+date: "2023-02-18"
+output: 
+  bookdown::gitbook:
+    df_print: kable
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = NA, tidy = TRUE, fig.height=8, fig.width=10)
+```
+
+# Introduction 
+
+Dans ce travail, je me propose de vous exposer une méthode d'analyse de données très populaire appelée l'analyse en composantes principales. Après une brève description de cette méthode pour que vous sachiez à quoi elle sert je ferai une application sur un jeu de données qui contient des précieuses données sur les caractéristiques physiques des joueurs de football. 
+J'utiliserai le langage R avec les packages FactoMineR et factoextra pour réaliser l'étude. 
+
+## L'ACP c'est quoi ?
+
+L'analyse en composantes principales est une méthode mathématique et statistique pour décrire et factoriser un jeu de données multidimensionnelles. Par jeu de données multidimensionnelle j'entends un tableau de données dont les lignes sont des individus sont des unités statistiques (personnes, pays, départements ...) et dont les colonnes sont des caractéristiques observables de ces individus : age, poids, taille, salaire pour une personne par exemple, PIB (en euro), nombre d'habitants, budget défense pour un pays par exemple. Il est important que les données soient multidimensionnelles pour réaliser une ACP. Si le jeu de données contient par exmple 100 individus et deux colonnes alors il est plus intéressant d'utiliser des méthodes de statistiques bivariées pour étudier simultanément la distribution des colonnes (nuage de points, coefficients de corrélation). 
+
+L'ACP fait partie de ce qu'on appelle les méthodes d'analyse factorielle. L'ACP est utilisée lorsque les variables que nous souhaitons étudier sont *toutes* quantitatives. 
+La désignation **analyse factorielle** donne un indice sur ce que fait l'ACP. En effet lorsque nous factorisons une expression mathématiques (un polynome de 4e degré par exemple), en réalité nous simplifions son écriture afin de nous permettre analytiquement par exemple quels sont les racines du polynome et comment ces racines sont liées les une autres. 
+
+Le Polynôme $P(x) = x^4 + x^3 - 7x^2 - 13x - 6$ peut être factorisé en cette expression plus simple $P(x) = (x + 1)(x + 1)(x - 3)(x + 2)$. Avec la forme factorisée de $P$ nous pouvons avec peu d'effort dire que $P(1)=0$ alors qu'il faudrait le calculer manuellement dans la forme non factorisée. 
+
+L'ACP peut être vu comme une méthode mathématique et statistique qui nous permet de résumer un jeu de données multidimensionnelles en réduisant ses dimensions. 
+Le graphique suivant illustre l'objectif de la méthode. Grâce à une ACP nous pouvons passer d'un jeu de données $(n * m)$ où $n$ représente le nombre de lignes (observations) et $m$ le nombre de colonnes (ou variables) à un nouveau jeu de données $(n * k)$ où $k << m$. Les nouvelles colonnes que l'ACP a créées sont appellées les composantes principales. 
+
+![](images/illustration.png)
+
+
+## Présentation du jeu de données 
+
+Le jeu de données sur lequel je vais réaliser une analyse en composantes principales vient du site *sofifa.com*. 
+
+![](images/sofifa.png)
+
+Sur ce site il est possible de récupérer des informations publiques sur les joueurs de football (age, salaire, valeur, taille, poids, rapidité ...). J'ai récupéré les données des joueurs pour l'année 2022. Le jeu de données que j'ai contient 19232 joueurs pour 74 colonnes (variables). 
+Par souci de simplicité nous n'allons réaliser l'analyse en composantes principales que sur un échantillon du jeu de données. Je rends disponible le jeu de données afin de vous permettre de reproduire l'analyse si vous le souhaitez. Il vous suffit de référencer le lien https://raw.githubusercontent.com/agailloty/Outils-Analyses-R/main/dataset/fifa22.csv dans votre la fonction de lecture des données pour récupérer le jeu de données.
+
+```{r}
+fifa22 <- read.csv("https://raw.githubusercontent.com/agailloty/Outils-Analyses-R/main/dataset/fifa22.csv")
+```
+
+## L'échantillon 
+
+Nous pouvons afficher les 10 premières lignes du jeu de données pour avoir un aperçu des données. 
+
+```{r}
+fifa22[1:10, 1:10]
+```
+
+
+# Réaliser une ACP sur le jeu de données
+
+
+## Séparer les variables dans des objets R pour une meilleure visibilité. 
+
+Nous allons mettre les noms des colonnes dans des variables R pour mieux comprendre le code.
+
+### A quoi servent les variables quanti actives ? 
+
+Les variables quantitatives illustratives servent à calculer les composantes de l'ACP. 
+Elles entrent dans le calcul de la matrice de variance-covariance. 
+
+```{r}
+var_quanti_actives <- c("height_cm", "weight_kg", "skill_dribbling", "skill_ball_control",
+"movement_acceleration", "movement_agility", "power_shot_power",
+"power_jumping", "power_stamina", "power_strength", "mentality_aggression",
+"mentality_interceptions", "defending_marking_awareness",
+"defending_standing_tackle", "defending_sliding_tackle", "goalkeeping_diving",
+"goalkeeping_handling", "goalkeeping_kicking", "goalkeeping_speed")
+```
+
+### A quoi servent les variables quantitatives illustratives ? 
+
+Les variables illustratives n'influencent pas la construction des composantes principales de l'analyse. Elles aident à l'interprétation des dimensions de variabilité.
+
+```{r}
+var_quanti_illustratives <- c("overall", "potential", "value_eur", "pace", "shooting", "passing", "dribbling","defending","physic")
+```
+
+### A quoi servent les variables qualitatives illustratives
+
+Comme les variables quantitatives illustratives, elles aident à l'interprétation des composantes.
+Elles sont qualitatives (modalités discrètes) : par club, par league, par nationalité ...
+
+l'ACP ne se base que sur des données numériques. 
+
+```{r}
+var_quali_illustratives <- c("body_type")
+```
+
+### Filtrer le jeu de données
+
+```{r}
+fifa_100 <- fifa22[1:100,]
+```
+
+Ne prendre que les colonnes (variables) qui nous intéressent 
+
+```{r}
+variables_acp <- c(var_quanti_actives, var_quanti_illustratives, var_quali_illustratives)
+```
+
+```{r}
+fifa_100 <- fifa_100[, variables_acp]
+```
+
+Parmi les colonnes que nous avons sélectionnée, rien n'indique le nom des joueurs. Si nous ne précisions pas les noms des joueurs, les joueurs seront numérotés de 1 à 100 comme dans le tableau suivant. 
+
+```{r}
+fifa_100[1:10, 1:10]
+```
+
+
+```{r}
+fifa_100 <- data.frame(fifa_100)
+rownames(fifa_100) <- head(fifa22$short_name, 100)
+```
+
+Maintenant chaque ligne correspond au nom d'un joueur. 
+
+```{r}
+fifa_100[1:10, 1:10]
+```
+
+## Réalisation de l'ACP avec FactoMineR
+
+Pour réaliser une ACP avec FactoMineR, il fournir à la fonction PCA les arguments suivants : 
+
+- X : le jeu de données
+- scale.unit : TRUE ou FALSE (pour réduire et centrer les données numériques)
+- ncp : Le nombre de composantes principales
+- quanti.sup : Les indices des variables quantitatives illustratives
+- quali.sup : Les indices des variables qualitatives illustratives
+- ind.sup : Les indices des lignes contenant les individus illustratifs. 
+- graph : TRUE ou FALSE pour indiquer si R doit afficher les graphiques de l'ACP
+
+Nous ne sommes pas obligés de renseigner tous les paramètres de la fonction PCA. 
+
+La condition minimale à satisfaire pour réaliser une ACP avec la fonction PCA c'est de fournir en argument au paramètre X un jeu de données ne contenant que des variables numériques et ne contenant aucune donnée manquante. 
+
+Dans ce cas une ACP sera réalisée en considérant toutes les colonnes comme variables actives. 
+
+Dans la pratique nous voulons avoir un contrôle sur les résultats de l'ACP donc nous allons donner plus de précisions à la fonction PCA. 
+
+Dans notre présent cas nous allons préciser les indices des variables actives, variables quantitatives illustratives et des variables qualitatives illustratives. 
+
+### Trouver les positions des colonnes dans le jeu de données
+
+```{r}
+idx_var_actives <- match(var_quanti_actives, colnames(fifa_100))
+```
+
+```{r}
+idx_var_quanti_illustratives <- match(var_quanti_illustratives, colnames(fifa_100))
+```
+
+```{r}
+idx_var_quali_illustratives <- match(var_quali_illustratives, colnames(fifa_100))
+```
+
+```{r}
+# Charger la librairie FactoMineR
+library(FactoMineR)
+library(factoextra) # Pour représenter graphiques
+```
+
+
+```{r}
+premiere_acp <- PCA(X = fifa_100, scale.unit = TRUE, quanti.sup = idx_var_quanti_illustratives, 
+                    quali.sup = idx_var_quali_illustratives, graph = FALSE)
+```
+
+## Combien de composantes retenir ? 
+
+Comme tout objet dans R, nous pouvons utiliser la fonction `summary()` sur l'objet *premiere_acp* pour afficher certaines informations.
+
+```{r}
+summary(premiere_acp)
+```
+
+L'objet eig nous renvoie un tbaleau qui nous permet de déterminer combien de composantes retenir dans l'ACP.
+
+La règle de Kaiser-Guttman **"Le nombre des valeurs-propres supérieures à l'unité d'une matrice d'inter-corrélation est égal au nombre de facteur à extraire"**. 
+
+La règle de Kaiser nous aide à sélectionner le nombre optimal de composantes à retenir dans l'analyse. Nous regardons les valeurs de eigenvalues >= 1. 
+Dans le présent exemple nous allons retenir 4 composantes car à partir de la 5e composante la valeur propre est inférieure à 1.
+
+
+```{r}
+data.frame(premiere_acp$eig)
+```
+
+
+
+Chaque composante résume la variance (intertie) du jeu de donnée. Par exemple, la première composante explique à elle seule 50% de la variance du jeu de données. La composante 2 explique 22% de la variance, la composante 3 explique 9,0% etc... 
+
+Cumulativement les 4 composantes que nous retiendront dans l'analyse expliquent 87% de la variance totale du jeu de données. 
+
+Nous avons sélectionné 19 variables actives dans l'analyse en composantes principales. Ces variables sont **`r var_quanti_actives`**.  
+
+Grâce à l'ACP nous avons pû extraire 87% de l'information (l'inertie / variance) contenue dans 19 variables grâce à 4 variables synthétiques que nous appelons composantes principales. 
+
+Le reste de l'analyse consite donc à décomposer quelles variables initiales (variables actives) entrent dans la composition de chacune des composantes. 
+
+
+## Description des composantes
+
+Une composante (ou dimension) est une variable synthétique formée comme une combinaison linéaire des variables initiales contenues dans le jeu de données. 
+
+```{r}
+head(premiere_acp$ind$coord)
+```
+
+
+### Composante 1
+
+Nous utilisons la fonction `dimdesc()` pour afficher des informations permettant de décrire une dimension.
+
+```{r}
+dimdesc(premiere_acp, axes = 1)
+```
+
+### Composante 2
+
+Nous utilisons la fonction `dimdesc()` pour afficher des informations permettant de décrire une dimension.
+
+```{r}
+dimdesc(premiere_acp, axes = 2)
+```
+
+### Composante 3
+
+Nous utilisons la fonction `dimdesc()` pour afficher des informations permettant de décrire une dimension.
+
+```{r}
+dimdesc(premiere_acp, axes = 3)
+```
+
+
+## Représentations graphiques
+
+### Les variables : Le cercle des corrélations
+
+Le graphique suivant s'appelle le cercle de corrélation. 
+On représente simultanément deux dimensions (axes). 
+On lit ce graphique de gauche à droite puis de bas en haut. 
+Les axes représentent des corrélations. Si une variable pointe vers la gauche, c'est qu'elle est négativement corrélée à l'axe 1 et vice versa. 
+Si une variable pointe vers le bas elle est négativement corrélée à l'axe 2 et vice versa. 
+Ce graphique nous permet de voir quelles variables s'opposent entre elles sur chaque axe.
+
+```{r fig.height=8, fig.width=10}
+plot.PCA(premiere_acp, axes = c(1, 2), choix = "var")
+```
+
+## Graphique des individus
+
+```{r fig.height=8, fig.width=10}
+plot.PCA(premiere_acp, axes = c(1, 2), choix = "ind")
+```
+
+## Personnalisation des graphiques avec `factoextra`
+
+### Représenter le cercle de corrélation puis mettre en avant la contribution de chaque variable 
+
+```{r fig.height=8, fig.width=12}
+fviz_pca_var(premiere_acp, col.var="contrib", axes = c(1,2), gradient.cols = c("blue", "yellow", "red"), title = "Cercle des corrélations avec contribution de chaque variable")
+```
+
+### Représenter le % de contribution de chaque variable sur les axes 1 et 2 
+
+```{r}
+fviz_contrib(premiere_acp, choice = "var", axes = 1)
+```
+
+```{r}
+fviz_contrib(premiere_acp, choice = "var", axes = 2)
+```
+
+# Classification ascendate hiérarchique (CAH)
+
+## Catégroriser les joueurs en groupes homogènes
+
+On a un jeu de données de 100 joueurs, comment peut-on classer les joueurs en 5 groupes homogènes ?
+On utilise la fonction HCPC du package FactoMineR, en précisant en argument l'objet acp qu'on a créé avec la fonction PCA, puis on précise le nombre de clusters (groupes, classes) qu'on veut produire. 
+L'argument graph = FALSE instruit R de ne représenter les résultats graphiquement.
+
+```{r}
+classif <- HCPC(premiere_acp, nb.clust = 5, graph = FALSE)
+```
+
+## Description de chaque cluster
+
+On peut utiliser une propriété de l'objet classif pour afficher la description de chaque cluster. 
+
+```{r}
+classif$desc.axes
+```
+
+Ces résultats nous permettent de savoir quelle(s) composante(s) caractérisent les mieux les individus qui appartiennent à un cluster. 
+On a créé 5 clusters, le tableau affiche donc les caractéristiques de chaque cluster. 
+
+v.test: c'est une statistique calculée qui permet de tester la significativité du lien du cluster avec le(s) composante(s). Si sa valeur est supérieure à 1.96 c'est que le lien entre le cluster et l'axe est significatif. 
+Il y a un lien entre v.test et la p.value. Plus la v.test est grande moins la p.value sera. 
+Une p.value inférieure ou égale à 0.05 indique que le test statistique est significatif. 
+
+Le signe de la v.test
+Si positif : les individus qui sont dans le cluster ont en moyenne une coordonnée positive sur l'axe considérée
+
+Si négatif : les individus qui sont dans le cluster ont en moyenne une coordonnée négative sur l'axe considérée.
+
+Interprétation résultat cluster 1
+Les individus qui sont dans le cluster  sont caractérisés essentiellement par la dimension 1.
+Les joueurs qui sont classés dans ce clusters ont en moyenne une coordonnée égale à -7.11018 tandis que dans le reste du jeu de données les joueurs ont en moyenne une coordonnée de 6.931955e-16 (proche de 0) sur cette dimension. 
+
+
+
+
+
+## Les individus parangon 
+
+Le but de la classification ascendante hiérarchique c'est de regrouper les individus qui se ressemblent le plus (minimiser la variance intra cluster) et faire en sorte que chaque cluster diffère d'un autre (maximiser la variance entre chaque cluster).
+
+Les individus parangon sont les individus qui se rapprochent le plus du centre de chaque cluster. Ce sont les individus "moyens" de chaque cluster. C'est eux qui caractérisent le mieux le cluster étudié.
+
+```{r}
+classif$desc.ind$para
+```
+
+
+## Les individus spécifiques
+
+Ce sont les individus les plus éloignés du centre du cluster. On aurait pu les mettre dans un autre cluster. Ils sont à la frontière de plusieurs clusters.
+
+```{r}
+classif$desc.ind$dist
+```
+
+```{r}
+factoextra::fviz_cluster(classif, repel = TRUE, title = "Représentation des clusters")
+```
+
+
+```{r}
+fviz_dend(classif)
+```
+
+```{r}
+classif2 <- HCPC(premiere_acp, graph = FALSE)
+```
+
+```{r}
+fviz_cluster(classif2)
+```
+
+# Annexes 
+
+## Résumé des résultats 
+
+```{r}
+summary(premiere_acp)
+```
+
+
+# Bibliographie
+
+Kassambara A, Mundt F (2020). _factoextra: Extract and Visualize the Results of Multivariate Data Analyses_. R
+  package version 1.0.7, <https://CRAN.R-project.org/package=factoextra>.
+
+JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi and Kevin Ushey and Aron Atkins and Hadley
+  Wickham and Joe Cheng and Winston Chang and Richard Iannone (2023). rmarkdown: Dynamic Documents for R. R package
+  version 2.20. URL https://rmarkdown.rstudio.com.
+
+  Yihui Xie and J.J. Allaire and Garrett Grolemund (2018). R Markdown: The Definitive Guide. Chapman and Hall/CRC.
+  ISBN 9781138359338. URL https://bookdown.org/yihui/rmarkdown.
+
+  Yihui Xie and Christophe Dervieux and Emily Riederer (2020). R Markdown Cookbook. Chapman and Hall/CRC. ISBN
+  9780367563837. URL https://bookdown.org/yihui/rmarkdown-cookbook.
+  
+  Xie Y (2016). _bookdown: Authoring Books and Technical Documents with R Markdown_. Chapman and Hall/CRC, Boca
+  Raton, Florida. ISBN 978-1138700109, <https://bookdown.org/yihui/bookdown>.
+
+Sebastien Le, Julie Josse, Francois Husson (2008). FactoMineR: An R Package for Multivariate Analysis. Journal of
+  Statistical Software, 25(1), 1-18. 10.18637/jss.v025.i01
+  
+  Wickham H, François R, Henry L, Müller K, Vaughan D (2023). _dplyr: A Grammar of Data Manipulation_. R package
+  version 1.1.0, <https://CRAN.R-project.org/package=dplyr>.
