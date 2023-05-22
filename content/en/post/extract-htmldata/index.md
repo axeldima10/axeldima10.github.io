@@ -40,20 +40,122 @@ categories:
   - webscraping
 ---
 # Introduction:
-This article provides an in-depth explanation of a C# code snippet that utilizes the HtmlAgilityPack library and Json serialization. The code focuses on extracting job information from HTML documents, processing and storing the data in different formats. Let's break down the code step by step to understand its functionality.
+In today's digital age, extracting and processing data from various sources is a common task. This is particularly true when it comes to job data, where information is scattered across multiple HTML documents. In this blog article, we will explore a C# code snippet that demonstrates how to efficiently extract job information from HTML files using the HtmlAgilityPack library. Additionally, we'll delve into the process of serializing the extracted data into both CSV and JSON formats for further analysis and integration with other systems.
 
-# Libraries and Namespace Imports:
+# HTML Document Manipulation with HtmlAgilityPack:
+The code snippet relies on the HtmlAgilityPack library, a powerful tool for parsing and manipulating HTML documents. Let's examine the key methods utilized in this code and their functionalities.
+
+## ExtractJobInfo Method:
+The ExtractJobInfo method is responsible for extracting job information from an HTML document. It takes an HtmlDocument object as input and returns a list of JobCard objects. Here's an overview of its functionality:
+
+```csharp
+private static IList<JobCard> ExtractJobInfo(HtmlDocument doc)
+{
+    var jobCards = doc.DocumentNode.SelectNodes("//div[starts-with(@class, 'job_seen_beacon')]");
+    List<JobCard> jobInfos = new List<JobCard>();
+    foreach (var job in jobCards)
+        jobInfos.Add(ExtractInfo(job));
+    return jobInfos;
+}
+```
+
+Explanation:
+
+The method utilizes XPath queries to select all <div> elements with a class attribute starting with "job_seen_beacon".
+- The selected job card nodes are stored in the jobCards variable.
+- It then iterates through each job node and calls the ExtractInfo method to extract the title, company, location, and description from the job node.
+- The extracted information is used to create a new JobCard object, which is added to the jobInfos list.
+- Finally, the method returns the list of job cards.
+
+Here's the definition of the JobCard object :
+
+```csharp
+public record JobCard(string Title, 
+                      string Company, 
+                      string Location, 
+                      string Description);
+```
+
+## ExtractInfo Method:
+The ExtractInfo method is called by the ExtractJobInfo method to extract specific job details from a job card node. It takes an HtmlNode object as input and returns a JobCard object. Let's examine its implementation:
+
+```csharp
+private static JobCard ExtractInfo(HtmlNode node)
+{
+    string title = node.SelectSingleNode(".//span[starts-with(@id, 'jobTitle')]/text()").InnerText.Trim();
+    string company = node.SelectSingleNode(".//span[@class='companyName']").InnerText.Trim();
+    string location = node.SelectSingleNode(".//div[@class='companyLocation']").InnerText.Trim();
+    string description = node.SelectSingleNode(".//div[@class='job-snippet']").InnerText.Trim();
+    return new JobCard(title, company, location, description);
+}
+```
+
+Explanation:
+
+- The method uses XPath queries to extract specific elements within the job card node.
+- It retrieves the job title by selecting the <span> element with an ID starting with "jobTitle" and extracting the inner text.
+- The company name is obtained by selecting the <span> element with a class attribute equal to "companyName".
+- The location is extracted by selecting the <div> element with a class attribute equal to "companyLocation".
+- The description is obtained by selecting the <div> element with a class attribute equal to "job-snippet".
+- Finally, a new JobCard object is created using the extracted information and returned.
+
+# Serializing Job Data to CSV and JSON:
+After extracting the job information from the HTML documents, the code snippet proceeds to serialize the data into both CSV and JSON formats. Let's explore the serialization process.
+
+## Writing to CSV File:
+The extracted job information is written to a CSV file named "jobs.csv" using the File.WriteAllLines method. Here's the code snippet that accomplishes this:
+
+```csharp
+File.WriteAllLines("jobs.csv", 
+    res.Select(job => $"{job.Title},{job.Company},{job.Location},{job.Description}"));
+```
+
+Explanation:
+
+- The `res` variable contains a flattened list of JobCard objects obtained by using LINQ's SelectMany on the allJobs list.
+- The Select method is then used to transform each JobCard object into a string representation that includes the job title, company, location, and description.
+- The resulting strings are written to the "jobs.csv" file using the File.WriteAllLines method, where each line corresponds to a single job entry in the CSV file.
+Writing to JSON File:
+- In addition to the CSV file, the code snippet also serializes the job data into a JSON file named "jobs.json". This process is performed in the Persist method. Let's take a closer look at its implementation:
+
+```csharp
+private static void Persist(string filepath, IList<JobCard> data) 
+{
+    var encoder = JavaScriptEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Latin1Supplement, UnicodeRanges.GeneralPunctuation);
+    var options = new JsonSerializerOptions { WriteIndented = true, Encoder = encoder };
+    string jsonString = JsonSerializer.Serialize(data, options);
+    File.WriteAllText(filepath, jsonString);
+}
+```
+
+Explanation:
+
+- The Persist method receives a file path and a list of JobCard objects as parameters.
+It begins by creating a JavaScriptEncoder instance, specifying the Unicode character ranges to include in the encoding. In this case, it includes the Basic Latin, Latin-1 Supplement, and General Punctuation ranges.
+- Next, a `JsonSerializerOptions` object is created, and the `WriteIndented` property is set to true to format the JSON output with indentation.
+- The Encoder property of the options object is assigned the previously created encoder instance.
+The `JsonSerializer.Serialize` method is called, passing the data list and the options object, which returns the JSON string representation of the job data.
+- Finally, the JSON string is written to the specified file path using the `File.WriteAllText` method.
+
+# Conclusion:
+In this blog article, we explored a C# code snippet that showcases the usage of the HtmlAgilityPack library for HTML document manipulation and demonstrated how to extract job information from HTML files efficiently. Additionally, we examined the process of serializing the extracted data into both CSV and JSON formats for further analysis and integration. By leveraging XPath queries, LINQ operations, and the serialization capabilities of System.Text.Json, this code snippet provides a practical example of automating data extraction and transformation tasks. It equips developers with the knowledge and tools necessary to streamline job data processing workflows and opens doors to leveraging job data in a variety of applications.
+
+
+# Annex
+
+Full code snippet
 
 ```csharp
 using HtmlAgilityPack;
 using System.Text.Json;
-using System.IO;
-```
-The code begins with the import of several namespaces required for the program's functionality. These include the HtmlAgilityPack for HTML document manipulation, System.Text.Json for JSON serialization, and System.IO for file input/output operations.
+using System.Text.Json.Serialization;
+using System.Linq;
+using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 
-# Main Method:
-
-```csharp
+public class Program
+{
     private static void Main(string[] args)
     {
         List<IList<JobCard>> allJobs = new();
@@ -74,82 +176,38 @@ The code begins with the import of several namespaces required for the program's
 
         Persist("jobs.json", allJobs.SelectMany(job => job).ToList());
     }
+
+    private static IList<JobCard> ExtractJobInfo(HtmlDocument doc)
+    {
+        var jobCards = doc.DocumentNode
+        .SelectNodes("//div[starts-with(@class, 'job_seen_beacon')]");
+
+        List<JobCard> jobInfos = new();
+
+        foreach(var job in jobCards)
+            jobInfos.Add(ExtractInfo(job));
+
+        return jobInfos;
+    }
+
+    private static JobCard ExtractInfo(HtmlNode node)
+    {
+        string title = node.SelectSingleNode(".//span[starts-with(@id, 'jobTitle')]/text()").InnerText.Trim();
+        string company = node.SelectSingleNode(".//span[@class='companyName']").InnerText.Trim();
+        string location = node.SelectSingleNode(".//div[@class='companyLocation']").InnerText.Trim();
+        string description = node.SelectSingleNode(".//div[@class='job-snippet']").InnerText.Trim();
+        return new JobCard(title, company, location, description);
+    }
+
+    private static void Persist(string filepath, IList<JobCard> data) 
+    {
+        var encoder = JavaScriptEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Latin1Supplement, UnicodeRanges.GeneralPunctuation);
+        var options = new JsonSerializerOptions { WriteIndented = true, Encoder = encoder };
+        string jsonString = JsonSerializer.Serialize(data, options);
+        File.WriteAllText(filepath, jsonString);
+    }
+}
+
+public record JobCard(string Title, string Company, string Location, string Description);
+
 ```
-
-The entry point of the program is the Main method. It performs the following tasks:
-
-## Declaration and Initialization:
-
-- allJobs: A list that stores a collection of job cards. Each job card represents a list of JobCard objects.
-- files: Retrieves the list of file paths within the "files" directory.
-
-### File Processing Loop:
-The code iterates through each file in the "files" directory.
-
-- Loads the HTML document using HtmlDocument and the file path.
-- Extracts job information using the ExtractJobInfo method.
-- Appends the extracted job cards to the allJobs list.
-
-Flattening Job Cards:
-
-- Using LINQ's SelectMany, the code flattens the allJobs list into a single list of JobCard objects, stored in the res variable.
-### Writing to CSV File:
-
-- The File.WriteAllLines method is used to write the job information to a CSV file named "jobs.csv".
-Each line in the file corresponds to a single job card, containing the title, company, location, and description.
-### Writing to JSON File:
-
-The Persist method is called to persist the job information to a JSON file named "jobs.json".
-The Persist method serializes the job cards into a JSON string using the JsonSerializer class and writes it to the file.
-ExtractJobInfo Method:
-The ExtractJobInfo method receives an HtmlDocument as input and returns a list of JobCard objects. It performs the following tasks:
-
-# Extracting Job Cards:
-
-Utilizing XPath, the method selects all <div> elements with a class attribute starting with "job_seen_beacon".
-The selected job card nodes are stored in the jobCards variable.
-Job Card Extraction:
-
-A list named jobInfos is created to store the extracted job information.
-The method iterates through each job node in jobCards.
-The ExtractInfo method is called to extract the title, company, location, and description from the job node.
-The extracted information is used to create a new JobCard object, which is added to the jobInfos list.
-Return Result:
-
-The method returns the jobInfos list containing the extracted job cards.
-ExtractInfo Method:
-The ExtractInfo method receives an HtmlNode representing a job card and returns a JobCard object. It performs the following tasks:
-
-Extraction Using XPath:
-
-The method utilizes XPath to select specific elements within the job card node.
-It extracts the job title, company name, location, and description using the SelectSingleNode method.
-The extracted values are stored in respective string variables.
-Creating a JobCard Object:
-
-Using the extracted values, a new `JobCard` object is created by passing the title, company, location, and description as parameters.
-
-Return Result:
-The method returns the created JobCard object.
-Persist Method:
-The Persist method is responsible for persisting the job card data to a JSON file. It takes a file path and a list of JobCard objects as parameters. The method performs the following tasks:
-
-JSON Encoding Configuration:
-
-It creates an instance of JavaScriptEncoder by specifying the Unicode character ranges to include in the encoding. In this case, it includes the Basic Latin, Latin-1 Supplement, and General Punctuation ranges.
-JSON Serialization Options:
-
-The method creates a JsonSerializerOptions object and sets the WriteIndented property to true to format the JSON output with indentation.
-It also sets the Encoder property of the options object to the previously created encoder instance.
-JSON Serialization:
-
-The JsonSerializer.Serialize method is used to convert the data list into a JSON string representation.
-The method passes the data list and the options object to the Serialize method, which returns the JSON string.
-Writing to File:
-
-The JSON string is written to the specified file path using the File.WriteAllText method.
-JobCard Class:
-The JobCard class is a record that represents a job card with four properties: Title, Company, Location, and Description. It provides a concise way to define immutable data objects.
-
-# Conclusion:
-The provided C# code utilizes the HtmlAgilityPack library to extract job information from HTML documents and demonstrates the usage of Json serialization to store the data in both CSV and JSON formats. By leveraging XPath queries and LINQ operations, the code efficiently processes multiple HTML files, extracts relevant data, and persists it in different formats for further analysis or integration with other systems. This code serves as a practical example of how to leverage external libraries and serialization techniques to automate data extraction and transformation tasks.
