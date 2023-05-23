@@ -7,7 +7,7 @@ subtitle: Manipulation de documents HTML avec HtmlAgilityPack
 summary: Cet article fournit une explication détaillée d'un extrait de code C# qui utilise la bibliothèque HtmlAgilityPack et la sérialisation Json. Le code se concentre sur l'extraction des offres d'emploi à partir de documents HTML, le traitement et le stockage des données dans différents formats.
 
 # Link this post with a project
-projects: []
+projects: [webscraping-cs]
 
 # Date published
 date: '2023-05-10T00:00:00Z'
