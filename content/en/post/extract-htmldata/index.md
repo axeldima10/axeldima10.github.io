@@ -7,7 +7,7 @@ subtitle: A brief introduction to the HtmlAgilityPack library
 summary: This article provides an in-depth explanation of a C# code snippet that utilizes the HtmlAgilityPack library and Json serialization. The code focuses on extracting job information from HTML documents, processing and storing the data in different formats. Let's break down the code step by step to understand its functionality.
 
 # Link this post with a project
-projects: []
+projects: [webscraping-cs]
 
 # Date published
 date: '2023-05-10T00:00:00Z'
