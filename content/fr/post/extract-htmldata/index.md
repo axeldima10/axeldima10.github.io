@@ -140,3 +140,76 @@ Explication :
 
 # Conclusion :
 Dans cet article de blog, nous avons exploré un extrait de code en C# qui présente l'utilisation de la bibliothèque HtmlAgilityPack pour la manipulation de documents HTML et a démontré comment extraire efficacement des informations sur les emplois à partir de fichiers HTML. De plus, nous avons examiné le processus de sérialisation des données extraites en formats CSV et JSON pour une analyse ultérieure et une intégration. En utilisant les requêtes XPath, les opérations LINQ et les capacités de sérialisation de System.Text.Json, cet extrait de code fournit un exemple concret d'automatisation de l'extraction et de la transformation de données. Il équipe les développeurs des connaissances et des outils nécessaires pour rationaliser les flux de traitement des données d'emploi et ouvre la voie à l'utilisation des données d'emploi dans une variété d'applications.
+
+# Annexe
+
+J'ai créé un [répertoire Github](https://github.com/agailloty/webscraping-cs) pour ce projet. 
+
+Code en entier
+
+```csharp
+using HtmlAgilityPack;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Linq;
+using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
+
+public class Program
+{
+    private static void Main(string[] args)
+    {
+        List<IList<JobCard>> allJobs = new();
+
+        var files = Directory.GetFiles("files");
+        foreach (var file in files)
+        {
+            var doc = new HtmlDocument();
+            doc.Load(file, Encoding.UTF8, false);
+
+            allJobs.Add(ExtractJobInfo(doc));
+        }
+
+        var res = allJobs.SelectMany(job => job).ToList();
+
+        File.WriteAllLines("jobs.csv", 
+                res.Select(job => $"{job.Title},{job.Company},{job.Location},{job.Description}"));
+
+        Persist("jobs.json", allJobs.SelectMany(job => job).ToList());
+    }
+
+    private static IList<JobCard> ExtractJobInfo(HtmlDocument doc)
+    {
+        var jobCards = doc.DocumentNode
+        .SelectNodes("//div[starts-with(@class, 'job_seen_beacon')]");
+
+        List<JobCard> jobInfos = new();
+
+        foreach(var job in jobCards)
+            jobInfos.Add(ExtractInfo(job));
+
+        return jobInfos;
+    }
+
+    private static JobCard ExtractInfo(HtmlNode node)
+    {
+        string title = node.SelectSingleNode(".//span[starts-with(@id, 'jobTitle')]/text()").InnerText.Trim();
+        string company = node.SelectSingleNode(".//span[@class='companyName']").InnerText.Trim();
+        string location = node.SelectSingleNode(".//div[@class='companyLocation']").InnerText.Trim();
+        string description = node.SelectSingleNode(".//div[@class='job-snippet']").InnerText.Trim();
+        return new JobCard(title, company, location, description);
+    }
+
+    private static void Persist(string filepath, IList<JobCard> data) 
+    {
+        var encoder = JavaScriptEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Latin1Supplement, UnicodeRanges.GeneralPunctuation);
+        var options = new JsonSerializerOptions { WriteIndented = true, Encoder = encoder };
+        string jsonString = JsonSerializer.Serialize(data, options);
+        File.WriteAllText(filepath, jsonString);
+    }
+}
+
+public record JobCard(string Title, string Company, string Location, string Description);
+
+```

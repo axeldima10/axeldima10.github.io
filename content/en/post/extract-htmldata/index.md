@@ -143,6 +143,8 @@ In this blog article, we explored a C# code snippet that showcases the usage of 
 
 # Annex
 
+I have created a [Github repository](https://github.com/agailloty/webscraping-cs) for this project.
+
 Full code snippet
 
 ```csharp
