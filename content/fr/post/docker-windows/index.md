@@ -1,6 +1,6 @@
 ---
-title: Installer docker sur Windows 10/11
-subtitle: Apprendre comment installer docker sur un PC Windows 10/11
+title: Installer Docker sur Windows 10/11
+subtitle: Apprendre comment installer Docker sur un PC Windows 10/11
 
 # Summary for listings and search engines
 summary: Ce guide vous aidera à installer Docker sur un PC sous Windows 10, en vous fournissant des étapes détaillées pour une installation réussie.
@@ -55,14 +55,14 @@ Il existe deux façons d'installer Docker sur Windows :
 Les exigences dépendent de la façon dont vous choisissez d'installer Docker. 
 Sachez que seule l'installation via WSL est compatible avec les éditions de Windows 10/11 Home, Pro, Enterprise ou Education.
 
-## Préréquis pour l'installation de docker via WSL
+## Préréquis pour l'installation de Docker via WSL
 
 * WSL version 1.1.3.0 ou supérieure.
 * Windows 10 64-bit: Home ou Pro 21H2 (build >= 19044), ou Enterprise ou Education 21H2 (build >= 19044).
 * Windows 11 64-bit: Home ou Pro version 21H2 supérieure, ou Enterprise Education version 21H2 or higher.
 * Activer la fonctionnalité WSL 2 sur Windows.
 
-## Préréquis pour l'installation de docker via Hyper-V
+## Préréquis pour l'installation de Docker via Hyper-V
 
 Windows 10 64-bit: Pro 21H2 (build >= 19044) ou Enterprise ou Education 21H2 (build >= 19044).
 Windows 11 64-bit: Pro 21H2 (build >= 19044) ou Enterprise ou Education 21H2 (build >= 19044).
