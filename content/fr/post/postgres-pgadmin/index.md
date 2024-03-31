@@ -1,6 +1,6 @@
 ---
 title: Installer PostgreSQL et PgAdmin via Docker pour un environnement de développement local
-subtitle: Dans cet article, je vais présenter brièvement le proecess d'installation de PostgreSQL et PgAdmin en utilisant Docker.
+subtitle: Dans cet article, je vais présenter brièvement le process d'installation de PostgreSQL et PgAdmin en utilisant Docker.
 
 # Summary for listings and search engines
 summary: Dans le monde du développement logiciel, la gestion efficace des bases de données est cruciale pour la réussite des projets. PostgreSQL, souvent abrégé en Postgres, est l'un des systèmes de gestion de bases de données relationnelles les plus puissants et les plus avancés disponibles aujourd'hui. Associé à PgAdmin, une interface graphique conviviale pour administrer les bases de données PostgreSQL, il devient encore plus accessible et pratique pour les développeurs.
