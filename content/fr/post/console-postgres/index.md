@@ -253,3 +253,19 @@ Voici une explication détaillée de chaque partie du code :
    }
    ```
    Cette méthode principale appelle la méthode `DisplayTableData` en passant le nom de la table `"pg_tables"` comme argument. Cela lance le processus d'affichage des données de cette table dans la console.
+
+   ## Résultat de la requête
+
+   Lorsque nous exécutons ce code alors la console C# s'ouvre et nous affiche les données suivantes qui viennent de la table `pg_tables`.
+
+   ```
+hasindexes , hasrules , hastriggers , rowsecurity , schemaname , tablename , tableowner , tablespace
+True, False, False, False, pg_catalog, pg_statistic, postgres, null, 
+True, False, False, False, pg_catalog, pg_type, postgres, null,
+True, False, False, False, pg_catalog, pg_foreign_table, postgres, null,
+True, False, False, False, pg_catalog, pg_authid, postgres, pg_global,
+True, False, False, False, pg_catalog, pg_statistic_ext_data, postgres, null,
+True, False, False, False, pg_catalog, pg_user_mapping, postgres, null,
+True, False, False, False, pg_catalog, pg_subscription, postgres, pg_global,
+True, False, False, False, pg_catalog, pg_attribute, postgres, null,
+   ```
