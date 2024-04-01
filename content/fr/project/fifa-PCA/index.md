@@ -1,6 +1,5 @@
 ---
-title: Analyse en composantes principales
-linkTitle: Analyses
+title: ACP sur les caractéristiques physiques des joueurs de FIFA
 summary: "Dans ce travail, je me propose de vous exposer une méthode d’analyse de
 données très populaire appelée l’analyse en composantes principales
 (ACP). Après une brève description de cette méthode pour que vous
@@ -8,9 +7,7 @@ sachiez à quoi elle sert je ferai une application sur un jeu de données
 qui contient des précieuses données sur les caractéristiques physiques
 des joueurs de football."
 date: '2023-03-21'
-type: book
-tags:
-  - R
+tags: [R, data-mining]
 ---
 
 
