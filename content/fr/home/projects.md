@@ -33,8 +33,6 @@ content:
       tag: python
     - name: Web
       tag: web
-    - name: AI
-      tag: ai
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.

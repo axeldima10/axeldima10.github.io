@@ -33,7 +33,7 @@ authors:
 
 tags:
   - C#
-  - .NET
+  - dotnet
 
 categories:
   - Programming

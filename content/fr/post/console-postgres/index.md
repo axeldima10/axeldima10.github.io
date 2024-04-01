@@ -34,6 +34,7 @@ authors:
 tags:
   - Postgres
   - Database
+  - dotnet
 
 categories:
   - backend

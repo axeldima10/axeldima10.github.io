@@ -34,7 +34,7 @@ authors:
 
 tags:
   - C#
-  - .NET
+  - dotnet
 
 categories:
   - webscraping
