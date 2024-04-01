@@ -6,7 +6,7 @@ subtitle: Dans le présent article je vais vous montrer comment exécuter des re
 summary: Dans le présent article je vais vous montrer comment exécuter des requêtes SQL basiques du type SELECT sur une table PostgreSQL à partir d'une application console C#.
 
 # Link this post with a project
-projects: [.NET-Postgres]
+projects: [dotnet-postgres]
 
 # Date published
 date: '2024-03-31T00:00:00Z'
