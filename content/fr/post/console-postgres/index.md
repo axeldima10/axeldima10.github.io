@@ -9,10 +9,10 @@ summary: Dans le présent article je vais vous montrer comment exécuter des req
 projects: [.NET/Postgres]
 
 # Date published
-date: '2024-04-01T00:00:00Z'
+date: '2024-03-31T00:00:00Z'
 
 # Date updated
-lastmod: '2024-04-01T00:00:00Z'
+lastmod: '2024-03-31T00:00:00Z'
 
 # Is this an unpublished draft?
 draft: false
