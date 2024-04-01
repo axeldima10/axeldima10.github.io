@@ -6,7 +6,7 @@ subtitle: Dans cet article, je vais présenter brièvement le process d'installa
 summary: Dans le monde du développement logiciel, la gestion efficace des bases de données est cruciale pour la réussite des projets. PostgreSQL, souvent abrégé en Postgres, est l'un des systèmes de gestion de bases de données relationnelles les plus puissants et les plus avancés disponibles aujourd'hui. Associé à PgAdmin, une interface graphique conviviale pour administrer les bases de données PostgreSQL, il devient encore plus accessible et pratique pour les développeurs.
 
 # Link this post with a project
-projects: [.NET/Postgres]
+projects: [.NET-Postgres]
 
 # Date published
 date: '2024-03-29T00:00:00Z'
