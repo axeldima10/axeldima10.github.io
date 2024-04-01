@@ -31,12 +31,9 @@ image:
 authors:
   - admin
 
-tags:
-  - C#
-  - dotnet
+tags: [dotnet, OOP]
 
-categories:
-  - Programming
+categories: [programming, C#]
 ---
 
 # Introduction & définition

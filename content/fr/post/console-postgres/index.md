@@ -31,13 +31,9 @@ image:
 authors:
   - admin
 
-tags:
-  - Postgres
-  - Database
-  - dotnet
+tags: [dotnet, postgres, database]
 
-categories:
-  - backend
+categories: [C#]
 ---
 
 Dans un [précédent article](http://gailloty.net/fr/post/postgres-pgadmin/) j'ai montré comment installer PostgreSQL et PgAdmin à l'aide de Docker pour un usage local. Dans le présent article je vais vous montrer comment exécuter des requêtes SQL basiques du type SELECT sur une table PostgreSQL à partir d'une application console C#.

@@ -31,13 +31,7 @@ image:
 authors:
   - admin
 
-tags:
-  - docker
-  - devops
-  - windows
-
-categories:
-  - Devops
+tags: [docker, devops, windows]
 ---
 
 # Introduction

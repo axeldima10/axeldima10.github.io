@@ -32,12 +32,9 @@ image:
 authors:
   - admin
 
-tags:
-  - C#
-  - dotnet
+tags: [dotnet, data]
 
-categories:
-  - webscraping
+categories: [C#, webscraping]
 ---
 # Introduction :
 À l'ère numérique d'aujourd'hui, extraire et traiter des données provenant de différentes sources est une tâche courante. Cela est particulièrement vrai lorsqu'il s'agit de données d'emploi, où les informations sont dispersées dans plusieurs documents HTML. Dans cet article de blog, nous allons explorer un extrait de code en C# qui démontre comment extraire efficacement des informations sur les emplois à partir de fichiers HTML en utilisant la bibliothèque HtmlAgilityPack. De plus, nous nous plongerons dans le processus de sérialisation des données extraites en formats CSV et JSON pour une analyse ultérieure et une intégration avec d'autres systèmes.

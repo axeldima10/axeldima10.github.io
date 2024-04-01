@@ -8,10 +8,10 @@ active: true
 headless: true
 
 # Order that this section appears on the page.
-weight: 120
+weight: 65
 
-title: 
-subtitle: 'Populaires'
+title: "Sujets abordés"
+subtitle: 
 
 content:
   # Choose the taxonomy from `config.toml` to display (e.g. tags, categories)
@@ -21,5 +21,5 @@ content:
 design:
   # Minimum and maximum font sizes (1.0 = 100%).
   font_size_min: 0.7
-  font_size_max: 2.0
+  font_size_max: 3.0
 ---

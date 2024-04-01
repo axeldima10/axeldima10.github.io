@@ -31,12 +31,9 @@ image:
 authors:
   - admin
 
-tags:
-  - Postgres
-  - Database
+tags: [postgres, database, docker]
 
-categories:
-  - backend
+categories: [backend]
 ---
 
 Dans cet article, je vais présenter brièvement le proecess d'installation de PostgreSQL et PgAdmin en utilisant Docker. Le but en utilisant est Docker dans c'est de vous permettre de reproduire l'environnement si vous le souhaitez.
