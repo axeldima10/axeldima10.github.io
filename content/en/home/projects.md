@@ -12,6 +12,10 @@ weight: 65
 title: Projects
 subtitle: ''
 
+# Activate this widget? true/false
+active: false
+
+
 content:
   # Page type to display. E.g. project.
   page_type: project

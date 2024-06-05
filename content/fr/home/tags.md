@@ -13,6 +13,9 @@ weight: 65
 title: "Sujets abordés"
 subtitle: 
 
+# Activate this widget? true/false
+active: false
+
 content:
   # Choose the taxonomy from `config.toml` to display (e.g. tags, categories)
   taxonomy: tags
