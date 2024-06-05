@@ -1,19 +1,20 @@
 ---
 # An instance of the Experience widget.
-# Documentation: https://docs.hugoblox.com/page-builder/
+# Documentation: https://wowchemy.com/docs/page-builder/
 widget: experience
 
 # This file represents a page section.
 headless: true
+active: true
 
 # Order that this section appears on the page.
-weight: 20
+weight: 40
 
 title: Experience
 subtitle:
 
 # Date format for experience
-#   Refer to https://docs.hugoblox.com/customization/#date-format
+#   Refer to https://wowchemy.com/docs/customization/#date-format
 date_format: Jan 2006
 
 # Experiences.
@@ -22,35 +23,29 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
-  - title: Technicien Front-Office, France Telecom
-    company: Majorel
-    company_url: 'https://fr.majorel.com/'
+  - title: CEO
+    company: GenCoin
+    company_url: ''
     company_logo: org-gc
-    location: Dakar, Sénégal
-    date_start: '2023-08-08'
+    location: California
+    date_start: '2021-01-01'
     date_end: ''
     description: |2-
-        Tâches effectuées:
+        Responsibilities include:
         
-        * Réalisation des dépannages à distance par le biais de techniques et diagnostic et des questions pertinentes
-        * Détermination de la meilleure solution en fonction du problème et des précisions fournies
-        par le client
-        * Accompagnement du client tout au long du processus de résolution de problème
-        * Transmission des incidents non résolus au personnel d'assistance du niveau supérieur
-        * Fourniture des informations précises concernant les produits ou les services de France Télécom
-        * Enregistrement des résolutions dans l'outil PATH
-        * Suivi et mise à jour du statut et des informations des clients
-        * Transmission des commentaires ou des suggestions des clients à l'équipe interne compétente
+        * Analysing
+        * Modelling
+        * Deploying
 
-  - title: Développeur junior - Chef de projet digital
-    company: org-x
-    company_url: 'https://incubateursism.com/'
-    company_logo: incub
-    location: Dakar, Sénégal
-    date_start: '2022-07-01'
-    date_end: '2022-10-01'
-    description: Stage au sein des incubateurs du groupe ISM Incub & IESA, mes principales missions étaient la mise en place d'une stratégie de communication et de refonte du site WEB.
+  - title: Professor of Semiconductor Physics
+    company: University X
+    company_url: ''
+    company_logo: org-x
+    location: California
+    date_start: '2016-01-01'
+    date_end: '2020-12-31'
+    description: Taught electronic engineering and researched semiconductor physics.
 
 design:
-  columns: '1'
+  columns: '2'
 ---
