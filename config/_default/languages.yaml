@@ -11,9 +11,9 @@ fr:
     - name: Home
       url: '/'
       weight: 5
-    - name: Enseignement
-      url: '/cours'
-      weight: 6
+    # - name: Enseignement
+    #   url: '/cours'
+    #   weight: 6
     - name: A propos
       url: '/me'
       weight: 7
