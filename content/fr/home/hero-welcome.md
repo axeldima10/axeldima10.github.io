@@ -11,4 +11,5 @@ title: Hey !
 #  css_class: fullscreen
 ---
 
-Bienvenue sur mon site, the Tech enthusiast, où j’écris sur le codage, la science des données, l’apprentissage automatique en utilisant les meilleures technologies. Je suis Axel, ingénieur logiciel. Je suis un passionné de Symfony, Java et Python. Vous pouvez apprendre à me connaître en lisant la section À propos. Contactez-moi sur LinkedIn ou par courriel !
+Bienvenue sur Tech enthusiast, mon site. 
+Je suis Axel, ingénieur logiciel. Je suis un passionné de Symfony, Java et Python. Vous pouvez apprendre à me connaître en lisant la section À propos. Contactez-nous sur LinkedIn ou par e-mail !
