@@ -43,7 +43,7 @@ experience:
         * Monitoring and updating of customer status and information
         * Client feedback/suggestions to appropriate internal team
 
-   - title: Hackathon - Community Manager
+  - title: Hackathon - Community Manager
     company: lePlanB.io
     company_url: 'https://leplanb.io/'
     company_logo: Bio
@@ -64,7 +64,7 @@ experience:
   - title: Hackathon - Digital Project Manager
     company: leGrandFrère
     company_url: 'https://legrandfrere.bf/'
-    company_logo: org-x
+    company_logo: GF
     location: Dakar, Sénégal
     date_start: '2022-03-11'
     date_end: '2022-03-23'
