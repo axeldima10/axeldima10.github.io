@@ -9,6 +9,9 @@ headless: true
 # Order that this section appears on the page.
 weight: 10
 
+# Activate this widget? true/false
+active: false
+
 title: Cours
 subtitle: "Cours enseignés à l'Université d'Angers"
 

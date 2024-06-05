@@ -1,10 +1,10 @@
 ---
 # Display name
-title: Axel-Cleris G.
+title: Axel DIMA G.
 
 # Full name (for SEO)
-first_name: Axel-Cleris
-last_name: Gailloty
+first_name: Axel
+last_name: DIMA GANMO
 
 # Is this the primary user of the site?
 superuser: true
@@ -13,28 +13,28 @@ superuser: true
 role: Software Developer
 
 # Organizations/Affiliations to show in About widget
-organizations:
-  - name: Creative Ingénierie
-    url: https://www.groupe-creative.fr/
+#organizations:
+  #- name: Creative Ingénierie
+    #url: https://www.groupe-creative.fr/
 
 # Short bio (displayed in user profile at end of posts)
 bio:
 
 # Interests to show in About widget
 interests:
-  - .NET / C#
+  - PHP / Symfony
   - Data Science / Data Engineering
-  - Cloud
+  - Networks
 
 # Education to show in About widget
 education:
   courses:
-    - course: Master in Applied Economics
-      institution: Université d'Angers
-      year: 2021
-    - course: Micro Master in Data Science
-      institution: University of California, San Diego
-      year: 2020
+    - course: Degree in Computer science, health science technology
+      institution: Institut National Universitaire Champollion , Albi Toulouse
+      #year: 2021
+    - course: Bachelor's degree in Applied Mathematics, computer science and Econometrics
+      institution: Institut Supérieur de Management - Ecole d'ingénieurs
+      #year: 2020
 
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
@@ -43,19 +43,22 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:agailloty@gmail.com'
-  - icon: twitter
-    icon_pack: fab
-    link: https://twitter.com/cleris_mr
-    label: Follow me on Twitter
-    display:
-      header: true
+    link: 'mailto:axeldimaganmo10@gmail.com'
+  #- icon: twitter
+    #icon_pack: fab
+    #link: https://twitter.com/cleris_mr
+    #label: Follow me on Twitter
+    #display:
+      #header: true
   - icon: github
     icon_pack: fab
-    link: https://github.com/agailloty
+    link: https://github.com/axeldima10
   - icon: linkedin
     icon_pack: fab
-    link: https://www.linkedin.com/in/cgailloty/
+    link: https://www.linkedin.com/in/aganmo/
+    label: Follow me on Linkedin
+    display:
+      header: true
 
 # Link to a PDF of your resume/CV.
 # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.yaml`,
@@ -72,5 +75,5 @@ highlight_name: true
 ---
 
 Self-taught and curious, my interests are software development and data science.
-I particularly like working with Microsoft technologies: .NET, WPF, Avalonia UI, Blazor and ASP.NET.
-I am currently working as a .NET/C# consultant. I help companies develop new applications and maintain existing applications in C# with .NET Framework or .NET Core. I am comfortable with C# and VB.NET and Python languages. I speak French and English.
+I particularly like working with technologies like : PHP using Symfony Framework, Python and Java.
+I am currently working as a Home Technical Assistance Advisor and as a freelancer, I participate in volunteer projects. I help people and companies develop new applications and maintain existing applications in PHP with Symfony Framework. I am comfortable with Java and Python languages. I speak French and have a good English level.
