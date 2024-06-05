@@ -50,9 +50,7 @@ experience:
     location: Dakar, Sénégal
     date_start: '2023'
     date_end: ''
-    description: LePlanB.io is a training structure for visual programming tools that require little technical knowledge (No-Code) whose missions are Strengthen employability, facilitate business creation, accelerate digital transformation.
-
-    During a Hackathon organized within the ISM group, my team and I solved the problems submitted by the company.
+    description: LePlanB.io is a training structure for visual programming tools that require little technical knowledge (No-Code) whose missions are Strengthen employability, facilitate business creation, accelerate digital transformation. During a Hackathon organized within the ISM group, my team and I solved the problems submitted by the company.
 
   - title:  Junior Developer - Digital Project Manager
     company: ISM Incub
@@ -70,13 +68,8 @@ experience:
     location: Dakar, Sénégal
     date_start: '2022'
     date_end: ''
-    description: Le Grand Frère is a school and career guidance platform that provides high school and university graduates, students, professionals and parents with all the information they need on post-baccalaureate and university life in Burkina Faso.
-    
-    During a Hackathon organized within the ISM group, my team and I solved the problems submitted by the company, ranging from the expansion of the territory to Senegal, to a prototyping of the site's redesign.
+    description: Le Grand Frère is a school and career guidance platform that provides high school and university graduates, students, professionals and parents with all the information they need on post-baccalaureate and university life in Burkina Faso. During a Hackathon organized within the ISM group, my team and I solved the problems submitted by the company, ranging from the expansion of the territory to Senegal, to a prototyping of the site's redesign.
 
-
-
- 
 
 design:
   columns: '1'
