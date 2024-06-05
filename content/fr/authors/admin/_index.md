@@ -14,8 +14,8 @@ role: Software Developer
 
 # Organizations/Affiliations to show in About widget
 #organizations:
-  #- name: Creative Ingénierie
-    #url: https://www.groupe-creative.fr/
+  - name: Freelance Informatique
+    url: https://www.freelance-informatique.fr/cv-developpeur-240605D010
 
 # Short bio (displayed in user profile at end of posts)
 bio:
@@ -30,9 +30,9 @@ interests:
 education:
   courses:
     - course: Master en Big Data - Actuariat - Assurance quantitative (en cours de préparation) 
-      institution: Institut Supérieur de Management - Ecole d'ingénieurs
+      institution: ISM - Ecole d'ingénieurs
     - course: Licence en Informatique Appliquées en sciences technologies et santé
-      institution: Institut National Universitaire Champollion , Albi Toulouse
+      institution: INUC, Albi Toulouse
       #year: 2021
     - course: Licence en Mathématiques Appliquées - Informatique - Econométrie
       institution: Institut Supérieur de Management - Ecole d'ingénieurs
