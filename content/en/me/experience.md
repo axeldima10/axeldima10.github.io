@@ -69,7 +69,6 @@ experience:
     date_start: '2022-03-11'
     date_end: '2022-03-23'
     description: Le Grand Frère is a school and career guidance platform that provides high school and university graduates, students, professionals and parents with all the information they need on post-baccalaureate and university life in Burkina Faso. During a Hackathon organized within the ISM group, my team and I solved the problems submitted by the company, ranging from the expansion of the territory to Senegal, to a prototyping of the site's redesign.
-
  
 design:
   columns: '1'
