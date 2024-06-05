@@ -26,7 +26,7 @@ experience:
   - title: Front-Office Technician, France Telecom
     company: Majorel
     company_url: 'https://fr.majorel.com/'
-    company_logo: org-gc
+    company_logo: majorel-logo
     location: Dakar, Sénégal
     date_start: '2023-08-08'
     date_end: ''
@@ -46,7 +46,7 @@ experience:
   - title:  Junior Developer - Digital Project Manager
     company: ISM Incub
     company_url: 'https://incubateursism.com/'
-    company_logo: Bio
+    company_logo: incub
     location: Dakar, Sénégal
     date_start: '2022-07-01'
     date_end: '2022-10-01'
