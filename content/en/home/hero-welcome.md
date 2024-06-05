@@ -10,5 +10,5 @@ design:
 ---
 
 Welcome to the tech enthusiast website. 
-I’m Axel, a software engineer, .Symfony, Java and Python enthusiast. You can get to know me by reading the About section. Let’s get in touch on LinkedIn or E-mail !
+I’m Axel, a software engineer, Symfony, Java and Python enthusiast. You can get to know me by reading the About section. Let’s get in touch on LinkedIn or E-mail !
 

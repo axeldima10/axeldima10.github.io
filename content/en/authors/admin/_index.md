@@ -29,6 +29,8 @@ interests:
 # Education to show in About widget
 education:
   courses:
+    - course: Master in Big Data - Actuarial science - Quantitative insurance (in progress) 
+      institution: Institut Supérieur de Management - Ecole d'ingénieurs
     - course: Degree in Computer science, health science technology
       institution: Institut National Universitaire Champollion , Albi Toulouse
       #year: 2021

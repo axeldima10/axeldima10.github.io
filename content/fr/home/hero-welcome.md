@@ -12,4 +12,4 @@ title: Hey !
 ---
 
 Bienvenue sur Tech enthusiast, mon site. 
-Je suis Axel, ingénieur logiciel. Je suis un passionné de Symfony, Java et Python. Vous pouvez apprendre à me connaître en lisant la section À propos. Contactez-nous sur LinkedIn ou par e-mail !
+Je suis Axel, ingénieur logiciel. Je suis un passionné de Symfony, Java et Python. Vous pouvez apprendre à me connaître en lisant la section À propos. Contactez-moi sur LinkedIn ou par e-mail !

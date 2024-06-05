@@ -29,6 +29,8 @@ interests:
 # Education to show in About widget
 education:
   courses:
+    - course: Master en Big Data - Actuariat - Assurance quantitative (en cours de préparation) 
+      institution: Institut Supérieur de Management - Ecole d'ingénieurs
     - course: Licence en Informatique Appliquées en sciences technologies et santé
       institution: Institut National Universitaire Champollion , Albi Toulouse
       #year: 2021
