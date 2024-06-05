@@ -46,7 +46,7 @@ experience:
   - title:  Junior Developer - Digital Project Manager
     company: ISM Incub
     company_url: 'https://incubateursism.com/'
-    company_logo: org-x
+    company_logo: Bio
     location: Dakar, Sénégal
     date_start: '2022-07-01'
     date_end: '2022-10-01'
