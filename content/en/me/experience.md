@@ -42,15 +42,16 @@ experience:
         * Save resolutions in PATH tool
         * Monitoring and updating of customer status and information
         * Client feedback/suggestions to appropriate internal team
-  
-  - title: Hackathon - Community Manager
-    company: lePlanB.io
-    company_url: 'https://leplanb.io/'
+
+  - title:  Junior Developer - Digital Project Manager
+    company: ISM Incub
+    company_url: 'https://incubateursism.com/'
     company_logo: org-x
     location: Dakar, Sénégal
-    date_start: '2023'
-    date_end: ''
-    description: LePlanB.io is a training structure for visual programming tools that require little technical knowledge (No-Code) whose missions are Strengthen employability, facilitate business creation, accelerate digital transformation. During a Hackathon organized within the ISM group, my team and I solved the problems submitted by the company.
+    date_start: '2022-07-01'
+    date_end: '2022-10-01'
+    description: Internship in the incubators of the ISM Incub & IESA group my main missions were the implementation of a communication strategy and redesign of the website.
+ 
 
 design:
   columns: '1'
