@@ -33,7 +33,7 @@ experience:
     description: |2-
         Responsibilities include:
 
-        * Perform remote troubleshooting through techniques and diagnostics and relevant questions
+        * Perform remote troubleshooting through diagnostics and relevant questions
         * Determine the best solution based on the problem and the clarifications provided
         by the client
         * Customer support throughout the problem resolution process
