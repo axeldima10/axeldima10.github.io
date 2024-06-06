@@ -42,9 +42,8 @@ experience:
     location: Dakar Sénégal
     date_start: '2020-12-01'
     date_end: '2023-07-01'
-    description: La formation en Mathématiques appliquées – Informatique et Économétrie proposé par
-    le groupe ISM m'a permis d'acquérir de solides connaissances, permettant d'analyser les situations économiques en s'appuyant sur des outils mathématiques.
-    
+    description: La formation Mathématiques appliquées en Informatique et Économétrie proposé par
+    le groupe ISM m'a permis d'acquérir de solides connaissances, permettant d'analyser les situations économiques en s'appuyant sur des outils mathématiques. 
     Il s’agissait d'une formation aux outils permettant de contribuer à la prise de décisions, à la préconisation de solutions et d’axes d’amélioration et à la prévision dans l’organisation. Cela par la maîtrise de la gestion des données, de la démarche mathématique et statistique, et des outils de l’analyse économique. Cette formation m'a également permis d'acquérir des compétences scientifiques en mathématiques appliquées aux sciences de gestion de l’entreprise moderne mais aussi en économie et en informatique.
 
 
