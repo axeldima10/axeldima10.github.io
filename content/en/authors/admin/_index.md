@@ -13,10 +13,10 @@ superuser: true
 role: Software Developer
 
 # Organizations/Affiliations to show in About widget
-#organizations:
-  #- name: Creative Ingénierie
-    #url: https://www.groupe-creative.fr/
-
+organizations:
+  - name: Freelance Informatique
+    url: https://www.freelance-informatique.fr/cv-developpeur-240605D010
+     
 # Short bio (displayed in user profile at end of posts)
 bio:
 
@@ -32,7 +32,7 @@ education:
     - course: Master in Big Data - Actuarial science - Quantitative insurance (in progress) 
       institution: Institut Supérieur de Management - Ecole d'ingénieurs
     - course: Degree in Computer science, health science technology
-      institution: Institut National Universitaire Champollion , Albi Toulouse
+      institution: Institut National Universitaire Champollion, AlbiToulouse
       #year: 2021
     - course: Bachelor's degree in Applied Mathematics, computer science and Econometrics
       institution: Institut Supérieur de Management - Ecole d'ingénieurs
@@ -78,4 +78,4 @@ highlight_name: true
 
 Self-taught and curious, my interests are software development and data science.
 I particularly like working with technologies like : PHP using Symfony Framework, Python and Java.
-I am currently working as a Home Technical Assistance Advisor and as a freelancer, I participate in volunteer projects. I help people and companies develop new applications and maintain existing applications in PHP with Symfony Framework. I am comfortable with Java and Python languages. I speak French and have a good English level.
+I am currently working as a Home Technical Assistance Advisor and as a freelancer at Freelance Informatique, I participate in volunteer projects and I help people and companies develop new applications and maintain existing applications in PHP using Symfony Framework. I am comfortable with Java and Python languages. I speak French and have a good English level.
