@@ -30,10 +30,7 @@ experience:
     location:  Albi Toulouse
     date_start: '2021-09-01'
     date_end: '2023-06-01'
-    description: |2-
-        * Dissertation on Y
-        * Basketball team
-        * DJ club
+    description: Ce programme est plus basé sur la théorie de l'informatique. La "théorie de l'informatique" (theoretical computer science en anglais) est une branche de l'informatique qui se concentre sur l'étude des fondements mathématiques et conceptuels de l'informatique. Elle explore les idées abstraites, les modèles formels et les algorithmes pour comprendre les capacités et les limites des systèmes informatiques. Au cours de mes anées d'apprentissage, j'ai d'appréhender les divers sous-domaines, tels que la théorie de la complexité algorithmique, la théorie des automates et des langages formels, la théorie des graphes, la logique informatique, et bien d'autres encore. Ces domaines étudient des questions fondamentales telles que la difficulté des problèmes algorithmiques, la structure des langages formels, la reconnaissance de motifs, la vérification de programmes, etc.
 
   - title: Licence en Mathématiques Appliquées - Informatique - Econométrie
     company: Institut Supérieur de Management - Ecole d'ingénieurs
@@ -42,10 +39,8 @@ experience:
     location: Dakar Sénégal
     date_start: '2020-12-01'
     date_end: '2023-07-01'
-    description: La formation Mathématiques appliquées en Informatique et Économétrie proposé par le groupe ISM m'a permis d'acquérir de solides connaissances, permettant d'analyser les situations économiques en s'appuyant sur des outils mathématiques. 
+    description: La formation Mathématiques appliquées en Informatique et Économétrie proposé par le groupe ISM m'a permis d'acquérir de solides connaissances, permettant d'analyser les situations économiques en s'appuyant sur des outils mathématiques. Il s’agissait d'une formation aux outils permettant de contribuer à la prise de décisions, à la préconisation de solutions et d’axes d’amélioration et à la prévision dans l’organisation. Cela par la maîtrise de la gestion des données, de la démarche mathématique et statistique, et des outils de l’analyse économique. Cette formation m'a également permis d'acquérir des compétences scientifiques en mathématiques appliquées aux sciences de gestion de l’entreprise moderne mais aussi en économie et en informatique.
     
-
-
 design:
   columns: '1'
 ---
