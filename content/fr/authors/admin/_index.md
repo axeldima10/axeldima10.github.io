@@ -77,6 +77,6 @@ highlight_name: true
 ---
 
 Autodidacte et curieux, mes centres d'intérêts sont le développement logiciel et la science de données. 
-J'aime particulièrement travailler les technologies Microsoft: Symfony, Python et JAVA.
+J'aime particulièrement travailler les technologies comme: Symfony, Python et JAVA.
 
 Je travaille actuellement en tant que Technicien Front Office et de profession libérale à Freelance Informatique, je travaille sur des projets bénévoles et j'aide les personnes et ou entreprises à développer de nouvelles applications et à maintenir des applications existantes en PHP avec Symfony. Je suis à l'aise avec les langages Java et Python. Je parle couramment français et j'ai un bon niveau d'anglais.

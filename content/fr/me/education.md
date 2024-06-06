@@ -26,7 +26,7 @@ experience:
   - title: Licence en Informatique Appliquées en sciences technologies et santé
     company: Institut National Universitaire Champollion
     company_url: 'https://www.univ-jfc.fr/'
-    company_logo: org-x
+    company_logo: uc
     location:  Albi Toulouse
     date_start: '2021-09-01'
     date_end: '2023-06-01'
@@ -38,7 +38,7 @@ experience:
   - title: Licence en Mathématiques Appliquées - Informatique - Econométrie
     company: Institut Supérieur de Management - Ecole d'ingénieurs
     company_url: 'https://www.groupeism.sn/ecole/ecole-dingenieurs'
-    company_logo: org-x
+    company_logo: ism
     location: Dakar Sénégal
     date_start: '2020-12-01'
     date_end: '2023-07-01'
