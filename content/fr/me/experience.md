@@ -29,7 +29,7 @@ experience:
     company_logo: majorel-logo
     location: Dakar, Sénégal
     date_start: '2023-08-08'
-    date_end: ''
+    date_end: '2024-07-09'
     description: |2-
         Tâches effectuées:
         
