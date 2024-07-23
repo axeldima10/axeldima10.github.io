@@ -77,6 +77,6 @@ highlight_name: true
 ---
 
 Self-taught and curious, my interests are software development and data science.
-I particularly like working with technologies like : PHP using Symfony Framework, Python and Java.
+I particularly like working with technologies like : WordPress, PHP using Symfony Framework, Python and Java.
 
-I am currently working as a freelancer at Freelance Informatique, I participate in volunteer projects and I help people and companies develop new applications and maintain existing applications in PHP using Symfony Framework. I am comfortable with Java and Python languages. I speak French and have a good English level.
+I am currently working as a freelancer, I participate in volunteer projects and I help people and companies develop new applications using WordPress or in PHP using Symfony Framework. 

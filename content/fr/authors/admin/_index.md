@@ -76,7 +76,7 @@ email: ''
 highlight_name: true
 ---
 
-Autodidacte et curieux, mes centres d'intérêts sont le développement logiciel et la science de données. 
-J'aime particulièrement travailler les technologies comme: Symfony, Python et JAVA.
+Autodidacte et curieux, mes centres d'intérêts sont le développement WEB et la science de données. 
+J'aime particulièrement travailler les technologies comme: WordPress, Symfony, Python et JAVA.
 
-De profession libérale via Freelance Informatique, je travaille sur des projets bénévoles et j'aide les personnes et ou entreprises à développer de nouvelles applications et à maintenir des applications existantes en PHP avec Symfony. Je suis à l'aise avec les langages Java et Python. Je parle couramment français et j'ai un bon niveau d'anglais.
+Actuellement en profession libérale, je travaille sur des projets bénévoles et j'aide les personnes et ou entreprises à développer de nouvelles applications/sites web e-commerce et vitrines en utilisant le CMS WordPress soit en PHP en utilisant le framework Symfony.
