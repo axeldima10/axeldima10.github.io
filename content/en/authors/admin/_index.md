@@ -22,7 +22,10 @@ bio:
 
 # Interests to show in About widget
 interests:
-  - PHP / Symfony
+  - Python for dev and data science
+  - WordPress | e-commerce
+  - PHP | Symfony
+  - Java | Angular
   - Data Science / Data Engineering
   - Networks
 
@@ -32,9 +35,11 @@ education:
     - course: Master in Big Data - Actuarial science - Quantitative insurance (in progress) 
       institution: Institut Supérieur de Management - Ecole d'ingénieurs
     - course: Degree in Computer science, health science technology
+      grade : With honour
       institution: Institut National Universitaire Champollion, AlbiToulouse
       #year: 2021
     - course: Bachelor's degree in Applied Mathematics, computer science and Econometrics
+      grade : High honours
       institution: Institut Supérieur de Management - Ecole d'ingénieurs
       #year: 2020
 

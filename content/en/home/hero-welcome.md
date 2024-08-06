@@ -10,5 +10,5 @@ design:
 ---
 
 Welcome to my website. 
-I’m Axel, a software engineer. You can get to know me by reading the About section. Let’s get in touch on LinkedIn or E-mail !
+I’m Axel, a Junior Data scientist and developper | WordPress Freelancer. To know more about me, read the About section. Let’s get in touch on LinkedIn or E-mail !
 
