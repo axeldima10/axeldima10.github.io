@@ -10,7 +10,7 @@ baseURL: 'https://aganmo.github.io/' # Website URL
 ## LANGUAGE
 ############################
 
-defaultContentLanguage: fr
+defaultContentLanguage: en
 hasCJKLanguage: false
 defaultContentLanguageInSubdir: true
 removePathAccents: true

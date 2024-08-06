@@ -10,7 +10,7 @@ last_name: DIMA GANMO
 superuser: true
 
 # Role/position/tagline
-role: Software Developer
+role: Junior Data scientist and developper
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -22,7 +22,10 @@ bio:
 
 # Interests to show in About widget
 interests:
-  - Symfony / PHP
+  - Python (dev et data)
+  - WordPress | e-commerce
+  - Symfony | PHP
+  - Java | Angular
   - Data Science / Data Engineering
   - Réseaux
 

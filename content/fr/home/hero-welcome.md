@@ -12,4 +12,4 @@ title: Hey !
 ---
 
 Bienvenue sur mon site. 
-Je suis Axel, Développeur logiciel. Vous pouvez apprendre à me connaître en lisant la section À propos. Contactez-moi sur LinkedIn ou par e-mail !
+Je suis Axel, Junior Data scientist et développeur | Freelance WordPress. Vous pouvez apprendre à me connaître en lisant la section À propos. Contactez-moi sur LinkedIn ou par e-mail !
